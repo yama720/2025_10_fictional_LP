@@ -1,5 +1,5 @@
 @use 'ress';
-@use '../base' as *;
+@use '../base/variables' as *;
 // -------------------------------
 
 header {
@@ -73,6 +73,7 @@ header {
   .drawerMenu {
     width: 100%;
     height: 100dvh; // スマホ向けの画面高さ配置方法,表示領域がずっと100
+    // display: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,6 +81,7 @@ header {
     z-index: 1000;
     top: -150vh;
     right: 0;
+    // background-color: $color_drawerBg;
     transition: top 0.3s ease-out;
 
     @media (width >= 800px) {
