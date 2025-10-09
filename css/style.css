@@ -564,8 +564,16 @@ body#yamadaWrapper .cover-home .drawerMenu .sns-nav img:hover {
   transform: scale(1.2, 1.2);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   background-color: #e9ead3;
+}
+body #top-img {
+  margin-block-end: 80px;
 }
 body #top-img img {
   width: 390px;
@@ -578,7 +586,41 @@ body #Concept {
   height: 540px;
   border-radius: 20px;
   margin: 1rem;
+  position: relative;
+}
+body #Concept p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-inline: 16px;
+}
+body #Concept::before {
+  content: "";
+  background-image: url(../../images/decoration2.png);
+  background-size: contain;
+  display: block;
+  width: 340px;
+  height: 63.38px;
+  position: absolute;
+  top: -20px;
+}
+body #Concept::after {
+  content: "";
+  background-image: url(../../images/decoration2.png);
+  background-size: contain;
+  display: block;
+  width: 340px;
+  height: 63.38px;
+  position: absolute;
+  bottom: -20px;
+  transform: rotateX(180deg);
 }
 body #Concept-hd {
+  font-size: 22px;
   font-weight: 900;
+  line-height: 34px;
+  text-align: center;
+  padding-inline: 16px;
+  padding-block-start: 85px;
+  padding-block-end: 75px;
 }/*# sourceMappingURL=style.css.map */
