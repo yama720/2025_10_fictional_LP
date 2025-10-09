@@ -275,4 +275,291 @@ progress {
 /* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
 [aria-disabled=true] {
   cursor: default;
+}
+
+header .drawerButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #bfae9f;
+  position: fixed;
+  top: 24px;
+  right: 16px;
+  z-index: 10000;
+}
+@media (width >= 800px) {
+  header .drawerButton {
+    display: none;
+  }
+}
+header .drawerButton span {
+  display: block;
+  width: 38px;
+  height: 4px;
+  background-color: #fcf5e3;
+  border-radius: 4px;
+  position: absolute;
+  transition: 0.3s all linear;
+}
+header .drawerButton span:nth-child(1) {
+  top: 10px;
+  inset-inline: 0;
+  margin-inline: auto;
+}
+header .drawerButton span:nth-child(2) {
+  inset: 0;
+  margin: auto;
+}
+header .drawerButton span:nth-child(3) {
+  bottom: 10px;
+  inset-inline: 0;
+  margin-inline: auto;
+}
+header .drawerButton:hover {
+  background-color: rgba(85, 6, 179, 0.4);
+}
+header .drawerButton.active span:nth-child(1) {
+  transform-origin: left top;
+  transform: rotate(45deg);
+  left: 13px;
+}
+header .drawerButton.active span:nth-child(2) {
+  transform: scale(0);
+}
+header .drawerButton.active span:nth-child(3) {
+  transform-origin: left bottom;
+  transform: rotate(-45deg);
+  left: 13px;
+}
+header .drawerMenu {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: -150vh;
+  right: 0;
+  transition: top 0.3s ease-out;
+}
+@media (width >= 800px) {
+  header .drawerMenu {
+    position: static;
+    height: auto;
+  }
+}
+
+.drawerMenu.active {
+  top: 0;
+}
+
+body#yamadaWrapper {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+body#yamadaWrapper .cover-home {
+  background-color: #f8e6e4;
+  width: auto;
+  height: 200px;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home {
+    width: auto;
+    height: 100dvh;
+  }
+}
+@media (width < 800px) and (width < 430px) {
+  body#yamadaWrapper .cover-home {
+    width: auto;
+    height: 100dvh;
+  }
+}
+body#yamadaWrapper .cover-home .page-header {
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .page-header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+}
+body#yamadaWrapper .cover-home .hd-wraper01 {
+  display: flex;
+  align-items: center;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .hd-wraper01 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body#yamadaWrapper .cover-home .hd-wraper02 {
+  display: flex;
+  align-items: center;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .hd-wraper02 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body#yamadaWrapper .cover-home .sp-show {
+  display: none;
+  text-align: center;
+}
+body#yamadaWrapper .cover-home .sp-show img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .sp-show {
+    display: block;
+  }
+}
+body#yamadaWrapper .cover-home .buy-wrapper {
+  flex-shrink: 0;
+}
+body#yamadaWrapper .cover-home .buy-wrapper .btn {
+  display: block;
+  padding-block: 16px;
+  padding-inline: 52px;
+  margin-inline-end: 32px;
+  margin-block: 64px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: #bfae9f;
+  color: #fcf5e3;
+  border-radius: 32px;
+  transition: background-color 0.3s ease;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .buy-wrapper .btn {
+    margin-inline-end: 0;
+  }
+}
+@media (width < 800px) and (width < 430px) {
+  body#yamadaWrapper .cover-home .buy-wrapper .btn {
+    font-size: 16px;
+    margin-block: 52px;
+    padding-block: 16px;
+    padding-inline: 45px;
+  }
+}
+body#yamadaWrapper .cover-home .btn:hover {
+  background-color: #e17066;
+}
+body#yamadaWrapper .cover-home .logo {
+  width: 130px;
+  height: 130px;
+  margin-inline-start: 16px;
+  margin-block-start: 16px;
+  margin-inline-end: 50px;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .logo {
+    position: absolute; /* 親要素を基準に配置 */
+    top: 8px;
+    left: 8px;
+    margin: 0;
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (width < 800px) and (width < 430px) {
+  body#yamadaWrapper .cover-home .logo {
+    width: 70px;
+    height: 70px;
+    top: 16px;
+    left: 16px;
+  }
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .drawerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+body#yamadaWrapper .cover-home .drawerMenu .drawerMenu-nv {
+  display: block;
+  height: auto;
+  position: static;
+}
+body#yamadaWrapper .cover-home .drawerMenu .main-nav {
+  display: flex;
+  justify-content: space-around;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .drawerMenu .main-nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 64px;
+    margin-block: 64px;
+    margin-block-start: 150px;
+  }
+}
+@media (width < 800px) and (width < 430px) {
+  body#yamadaWrapper .cover-home .drawerMenu .main-nav {
+    font-size: 24px;
+    gap: 20px;
+    margin-block: 16px;
+    margin-block-end: 54px;
+  }
+}
+body#yamadaWrapper .cover-home .drawerMenu .main-nav li {
+  list-style: none;
+}
+body#yamadaWrapper .cover-home .drawerMenu .main-nav li a {
+  text-decoration: none;
+  display: block;
+  font-size: 32px;
+  color: #5a3821;
+  padding-inline: 2rem;
+}
+@media (width < 430px) {
+  body#yamadaWrapper .cover-home .drawerMenu .main-nav li a {
+    font-size: 24px;
+  }
+}
+body#yamadaWrapper .cover-home .drawerMenu .main-nav li a:hover {
+  color: #bfae9f;
+}
+body#yamadaWrapper .cover-home .drawerMenu .sns-nav {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body#yamadaWrapper .cover-home .drawerMenu .sns-nav li {
+  margin-block: 64px;
+  padding-inline: 20px;
+}
+@media (width < 800px) {
+  body#yamadaWrapper .cover-home .drawerMenu .sns-nav li {
+    margin-block: 0;
+  }
+}
+@media (width < 800px) and (width < 430px) {
+  body#yamadaWrapper .cover-home .drawerMenu .sns-nav li {
+    margin-block: 0;
+  }
+}
+body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img {
+  width: 40px;
+  height: auto;
+}
+@media (width < 430px) {
+  body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img {
+    width: 30px;
+  }
+}
+body#yamadaWrapper .cover-home .drawerMenu .sns-nav img:hover {
+  transform: scale(1.2, 1.2);
 }/*# sourceMappingURL=style.css.map */

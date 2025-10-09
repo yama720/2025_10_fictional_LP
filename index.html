@@ -8,6 +8,77 @@
     <!-- GoogleやYahooなどの検索エンジンに検索されなくするメタタグ -->
     <meta name="robots" content="noindex,nofollow" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" async></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stick&family=Zen+Maru+Gothic&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+
+  <body id="yamadaWrapper">
+    <div class="cover-home">
+      <header class="page-header">
+        <div class="hd-wraper01">
+          <h1 class="left">
+            <a href="index.html"
+              ><img class="logo" src="images/icon.png" alt="moku.のホーム"
+            /></a>
+          </h1>
+
+          <!-- ドロワーメニューのボタン -->
+          <button class="drawerButton" onclick="drawerButton()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="drawerMenu">
+            <nav class="drawerMenu-nv">
+              <div class="sp-show">
+                <img src="images/icon.png" alt="moku.のロゴ" />
+              </div>
+
+              <ul class="main-nav">
+                <li><a href="#">Concept</a></li>
+                <li><a href="#">Special</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Space</a></li>
+                <li><a href="#">Access</a></li>
+              </ul>
+            </nav>
+
+            <div class="hd-wraper02">
+              <div class="buy-wrapper">
+                <a href="#" class="btn">今すぐ予約</a>
+              </div>
+
+              <ul class="sns-nav">
+                <li>
+                  <a href="#"><img src="/images/logo-black.png" alt="X" /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img
+                      src="/images/Facebook_Logo_Primary.png"
+                      alt="Facebook"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img
+                      src="/images/Instagram_Glyph_Gradient.png"
+                      alt="Instagram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>
 </html>
