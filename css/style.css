@@ -520,7 +520,7 @@ body#yamadaWrapper .cover-home .drawerMenu .main-nav li a {
   text-decoration: none;
   display: block;
   font-size: 32px;
-  color: #5a3821;
+  color: #593622;
   padding-inline: 2rem;
 }
 @media (width < 430px) {
@@ -564,8 +564,11 @@ body#yamadaWrapper .cover-home .drawerMenu .sns-nav img:hover {
   transform: scale(1.2, 1.2);
 }
 
+@font-face {
+  font-family: "JejuHallasan";
+  src: url("../../fonts/JejuHallasan.ttf.woff") format("woff");
+}
 img {
-  max-width: 100%;
   height: auto;
 }
 
@@ -580,6 +583,9 @@ body #top-img img {
   height: 680px;
 }
 body #Concept {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
   background-image: url(../../images/texture2.png);
   background-repeat: no-repeat; /* 画像の繰り返しを指定  */
   width: 340px;
@@ -587,6 +593,7 @@ body #Concept {
   border-radius: 20px;
   margin: 1rem;
   position: relative;
+  color: #593622;
 }
 body #Concept p {
   font-size: 17px;
@@ -621,6 +628,195 @@ body #Concept-hd {
   line-height: 34px;
   text-align: center;
   padding-inline: 16px;
-  padding-block-start: 85px;
   padding-block-end: 75px;
+}
+body .Reserve-btn {
+  display: flex;
+  justify-content: center;
+}
+body .Reserve-btn .btn {
+  display: block;
+  width: 236px;
+  height: 61px;
+  padding-block: 19px;
+  padding-inline: 16px;
+  margin-block: 80px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  background-image: url(../../images/texture1.png);
+  color: #593622;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+body .btn:hover {
+  background-color: #e17066;
+}
+body #shop-counter img {
+  width: 390px;
+  height: 249px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body #Special {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
+  width: 358px;
+  height: 1027px;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 80px auto;
+  color: #593622;
+  text-align: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+}
+body #Special img {
+  width: 333px;
+  height: 503.5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+body #Special::before {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Special::after {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
+body .heading {
+  position: relative;
+  top: -35px;
+  left: -90px;
+  font-family: "JejuHallasan";
+  font-size: 36px;
+  line-height: 1;
+  color: #6b7a47;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3, 0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3, 1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
+}
+body .SpecialMenu-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+body .menu-title {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 20px;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+body .menu-price {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 20px;
+  text-align: right;
+}
+body .menu-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body #sp-bottom {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 20px;
+  color: #6b7a47;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  padding-block-end: 2rem;
+  padding-inline-end: 1rem;
+  -webkit-text-decoration: underline wavy;
+          text-decoration: underline wavy;
+  text-underline-offset: 2px;
+}
+body .no-takeout {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 23px;
+  color: #d32929;
+  padding-block-end: 1.5rem;
+}
+body .reward {
+  font-weight: 700;
+  color: #593622;
+}
+body #period {
+  color: #593622;
+}
+body p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+  text-align: left;
+}
+body #Menu {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
+  width: 358px;
+  height: 2929px;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 80px auto;
+  color: #593622;
+  text-align: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+}
+body #Menu .menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-block-end: 1rem;
+}
+body .menu-item {
+  margin-bottom: 125px; /* 各メニュー項目間の縦の余白を調整 */
+}
+body .menu-item img {
+  width: 333px;
+  height: 450px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .menu-item p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+  text-align: left;
+  padding-inline-start: 1rem;
+  margin-block-start: 32px;
 }/*# sourceMappingURL=style.css.map */

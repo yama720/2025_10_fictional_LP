@@ -2,27 +2,35 @@
 @use '../vendors' as *;
 
 // ----------------------------------
+// 独自のフォント指定
+@font-face {
+  font-family: 'JejuHallasan';
+  src: url('../../fonts/JejuHallasan.ttf.woff') format('woff');
+}
+// ----------------------------------
+
 img {
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
 }
 
 body {
   background-color: $color_bg;
 
-  // main {
-  //   padding: 2rem;
-  // }
-
   #top-img {
-    margin-block-end: 80px;
+    margin-block-end: $spacing_4xl;
     img {
       width: 390px;
       height: 680px;
     }
   }
 
+  // コンセプト欄
   #Concept {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+
     background-image: url(../../images/texture2.png);
     background-repeat: no-repeat; /* 画像の繰り返しを指定  */
     width: 340px;
@@ -30,6 +38,7 @@ body {
     border-radius: 20px;
     margin: 1rem;
     position: relative;
+    color: $color_text;
 
     p {
       font-size: 17px;
@@ -70,7 +79,266 @@ body {
     line-height: 34px;
     text-align: center;
     padding-inline: $spacing_s;
-    padding-block-start: 85px;
+    // padding-block-start: 85px;
     padding-block-end: 75px;
+  }
+
+  // ボタン
+  .Reserve-btn {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      display: block;
+      width: 236px;
+      height: 61px;
+      padding-block: 19px;
+      padding-inline: $spacing_s;
+      margin-block: $spacing_4xl;
+      text-align: center;
+      text-decoration: none;
+      font-size: $font_text;
+      font-weight: $font_bold;
+      line-height: 24px;
+      background-image: url(../../images/texture1.png);
+      color: $color_text;
+      border-radius: 50px;
+      transition: background-color 0.3s ease; //ホバー時のアニメーション
+
+      // @media (width < 800px) {
+      //   margin-inline-end: 0;
+
+      //   @media (width < 430px) {
+      //     font-size: $font_text;
+      //     margin-block: $spacing_xl;
+      //     padding-block: $spacing_s;
+      //     padding-inline: 45px;
+      //   }
+      // }
+    }
+  }
+  .btn:hover {
+    background-color: #e17066; //ホバー背景色
+  }
+
+  // サイト上部の店内写真
+  #shop-counter {
+    img {
+      width: 390px;
+      height: 249px;
+      object-fit: cover; //比率保ったまま
+    }
+  }
+
+  // 予約者限定メニュー欄
+  #Special {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+
+    width: 358px;
+    height: 1027px;
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    // margin: 1rem;
+    margin: $spacing_4xl auto; //中央寄せ
+    // margin-block-start: $spacing_4xl;
+    color: $color_text;
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+
+    img {
+      width: 333px;
+      height: 503.5px;
+      object-fit: cover; //比率保ったまま
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // 装飾の草　上部
+  #Special::before {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) //左に20px 下に10px
+      rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Special::after {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) //左に20px 下に10px
+      rotate(272deg);
+  }
+
+  // 見出し
+  .heading {
+    position: relative;
+    top: -35px;
+    left: -90px;
+    font-family: $font_cp;
+    font-size: 36px;
+    line-height: 1;
+    color: $color_text2;
+    margin-bottom: 0.75rem;
+    text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3,
+      0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3,
+      1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
+  }
+
+  // 商品タイトルと価格を縦並びに
+  .SpecialMenu-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  // 商品タイトル
+  .menu-title {
+    font-size: 18px;
+    font-weight: $font_black;
+    line-height: 20px;
+    text-align: left; //文字を左端
+    margin-bottom: 0.25rem;
+  }
+
+  //価格
+  .menu-price {
+    font-size: 18px;
+    font-weight: $font_black;
+    line-height: 20px;
+    text-align: right; //文字を右端
+  }
+
+  // 予約者限定メニューとテイクアウト不可を横並びに
+  .menu-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // 予約者限定メニュー文字
+  #sp-bottom {
+    font-weight: $font_black;
+    font-size: 18px;
+    line-height: 20px;
+    color: $color_text2;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    padding-block-end: 2rem;
+    padding-inline-end: 1rem; //横並び文字間隔
+    text-decoration: underline wavy; //波線
+    text-underline-offset: 2px; //文字と波線の間隔
+  }
+
+  //注意書き
+  .no-takeout {
+    font-weight: $font_bold;
+    font-size: 15px;
+    line-height: 23px;
+    color: #d32929;
+    padding-block-end: 1.5rem;
+  }
+
+  // ご褒美の太字
+  .reward {
+    font-weight: $font_bold;
+    color: $color_text;
+  }
+
+  // なくなり次第終了
+  #period {
+    color: $color_text;
+  }
+
+  // 本文
+  p {
+    font-size: 14px;
+    font-weight: $font_medium;
+    line-height: 23px;
+    text-align: left; //左に
+  }
+
+  // メニュー欄
+  #Menu {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+
+    width: 358px;
+    height: 2929px;
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    // margin: 1rem;
+    margin: $spacing_4xl auto; //中央寄せ
+    // margin-block-start: $spacing_4xl;
+    color: $color_text;
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+
+    //メニュータイトルと値段の横並び
+    .menu-header {
+      display: flex;
+      justify-content: space-between; // 両端配置
+      align-items: flex-end;
+      // width: 100%;
+      padding-block-end: 1rem;
+    }
+  }
+
+  .menu-item {
+    margin-bottom: 125px; /* 各メニュー項目間の縦の余白を調整 */
+
+    img {
+      width: 333px;
+      height: 450px;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      object-fit: cover; //比率保ったまま
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: $font_medium;
+      line-height: 23px;
+      text-align: left; //左に
+      padding-inline-start: 1rem;
+      margin-block-start: $spacing_x;
+    }
   }
 }
