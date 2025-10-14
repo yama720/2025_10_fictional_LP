@@ -801,8 +801,37 @@ body #Menu .menu-header {
   align-items: flex-end;
   padding-block-end: 1rem;
 }
+body #Menu::before {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Menu::after {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
 body .menu-item {
   margin-bottom: 125px; /* 各メニュー項目間の縦の余白を調整 */
+}
+body .menu-item h3 {
+  padding-inline: 1rem;
 }
 body .menu-item img {
   width: 333px;
@@ -819,4 +848,124 @@ body .menu-item p {
   text-align: left;
   padding-inline-start: 1rem;
   margin-block-start: 32px;
+}
+body #Space {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 358px;
+  height: 473px;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 80px auto;
+  color: #593622;
+  text-align: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+}
+body #Space .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+body #Space .slider .slider-wrap {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: auto;
+}
+body #Space .slider .slider-wrap-text {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+body #Space .slider .slider-wrap-text img {
+  width: 236px;
+  height: 209px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+body #Space .slider .slider-wrap-text .guide-title {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 1.1;
+  color: #593622;
+  border-bottom: 2px solid #593622;
+  display: inline-block;
+  margin-block-start: 40px;
+}
+body #Space .slider .slider-wrap-text .guide {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #593622;
+  font-weight: 700;
+  padding-inline: 0.5rem;
+}
+body #Space .slider .arrow-left,
+body #Space .slider .arrow-right {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 10; /* スライドコンテンツ（通常 z-index: 1 など）よりも大きな値を設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #Space .slider .arrow-left img,
+body #Space .slider .arrow-right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+body #Space .slider .arrow-left:hover,
+body #Space .slider .arrow-right:hover {
+  opacity: 0.7;
+}
+body #Space .slider .arrow-left {
+  left: 10px;
+}
+body #Space .slider .arrow-right {
+  right: 10px;
+}
+body #Space::before {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Space::after {
+  content: "";
+  background-image: url(../../images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
 }/*# sourceMappingURL=style.css.map */

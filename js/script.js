@@ -16,3 +16,26 @@ document.querySelectorAll('.drawerMenu a').forEach((link) => {
     document.querySelector('.drawerMenu').classList.remove('active');
   });
 });
+
+// スライド
+const sliderWrap = document.querySelector('#Space .slider-wrap');
+const slides = document.querySelectorAll('#Space .slider-wrap-text');
+const prevBtn = document.querySelector('#Space .arrow-left');
+const nextBtn = document.querySelector('#Space .arrow-right');
+let index = 0;
+
+function updateSlide() {
+  sliderWrap.style.transform = `translateX(-${100 * index}%)`;
+}
+
+updateSlide();
+
+prevBtn.addEventListener('click', () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+  index = (index + 1) % slides.length;
+  updateSlide();
+});

@@ -25,6 +25,7 @@ body {
     }
   }
 
+  // ----------------------------------------------
   // コンセプト欄
   #Concept {
     display: flex;
@@ -83,6 +84,7 @@ body {
     padding-block-end: 75px;
   }
 
+  // -----------------------------------------
   // ボタン
   .Reserve-btn {
     display: flex;
@@ -121,6 +123,7 @@ body {
     background-color: #e17066; //ホバー背景色
   }
 
+  // ------------------------------------------------
   // サイト上部の店内写真
   #shop-counter {
     img {
@@ -130,6 +133,7 @@ body {
     }
   }
 
+  // -------------------------------------------------
   // 予約者限定メニュー欄
   #Special {
     display: flex;
@@ -290,6 +294,7 @@ body {
     text-align: left; //左に
   }
 
+  // ---------------------------------------------------
   // メニュー欄
   #Menu {
     display: flex;
@@ -321,8 +326,52 @@ body {
     }
   }
 
+  // 装飾の草　上部
+  #Menu::before {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) //左に20px 下に10px
+      rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Menu::after {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) //左に20px 下に10px
+      rotate(272deg);
+  }
+
   .menu-item {
     margin-bottom: 125px; /* 各メニュー項目間の縦の余白を調整 */
+
+    h3 {
+      padding-inline: 1rem;
+    }
 
     img {
       width: 333px;
@@ -340,5 +389,154 @@ body {
       padding-inline-start: 1rem;
       margin-block-start: $spacing_x;
     }
+  }
+
+  // ---------------------------------------------
+  // 店内の内装説明欄
+  #Space {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 358px;
+    height: 473px;
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    margin: $spacing_4xl auto; //中央寄せ
+    color: $color_text;
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+
+      .slider-wrap {
+        display: flex;
+        transition: transform 0.5s ease;
+        height: auto;
+      }
+
+      .slider-wrap-text {
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        height: auto;
+
+        img {
+          width: 236px;
+          height: 209px;
+          object-fit: cover; //比率保ったまま
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .guide-title {
+          font-weight: $font_black;
+          font-size: 15px;
+          line-height: 1.1;
+          color: $color_text;
+          border-bottom: 2px solid $color_text; // ← 線の太さ・色を自由に設定
+          display: inline-block; // 下線をテキスト幅に限定
+          margin-block-start: 40px;
+        }
+
+        .guide {
+          margin-top: 0.5rem;
+          font-size: 14px;
+          line-height: 1.6;
+          color: $color_text;
+          font-weight: $font_bold;
+          padding-inline: 0.5rem;
+        }
+      }
+
+      .arrow-left,
+      .arrow-right {
+        position: absolute;
+        top: 35%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        border-radius: 50%;
+        width: 36px; //ボタンのサイズ領域
+        height: 36px; //ボタンのサイズ領域
+        cursor: pointer;
+
+        z-index: 10; /* スライドコンテンツ（通常 z-index: 1 など）よりも大きな値を設定 */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%; //親ボタンの幅に合わせる
+          height: 100%; //親ボタンの高さに合わせる
+          object-fit: contain; ///比率維持
+          display: block; //imgをボタンに
+        }
+
+        &:hover {
+          opacity: 0.7; //hover時の演出
+        }
+      }
+
+      .arrow-left {
+        left: 10px;
+      }
+
+      .arrow-right {
+        right: 10px;
+      }
+    }
+  }
+
+  // 装飾の草　上部
+  #Space::before {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) //左に20px 下に10px
+      rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Space::after {
+    content: ''; //空箱用意
+    background-image: url(../../images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) //左に20px 下に10px
+      rotate(272deg);
   }
 }
