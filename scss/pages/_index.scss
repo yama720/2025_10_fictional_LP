@@ -19,9 +19,15 @@ body {
 
   #top-img {
     margin-block-end: $spacing_4xl;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
     img {
       width: 390px;
       height: 680px;
+      object-fit: contain;
     }
   }
 
@@ -31,13 +37,15 @@ body {
     display: flex;
     justify-content: center;
     flex-flow: column;
+    align-items: center;
 
     background-image: url(../../images/texture2.png);
     background-repeat: no-repeat; /* 画像の繰り返しを指定  */
     width: 340px;
     height: 540px;
     border-radius: 20px;
-    margin: 1rem;
+    margin: $spacing_4xl auto;
+    margin-block-end: 0;
     position: relative;
     color: $color_text;
 
@@ -89,7 +97,8 @@ body {
   .Reserve-btn {
     display: flex;
     justify-content: center;
-
+    flex-flow: column;
+    align-items: center;
     .btn {
       display: block;
       width: 236px;
@@ -126,6 +135,10 @@ body {
   // ------------------------------------------------
   // サイト上部の店内写真
   #shop-counter {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
     img {
       width: 390px;
       height: 249px;
@@ -147,7 +160,6 @@ body {
     border-radius: 20px;
     // margin: 1rem;
     margin: $spacing_4xl auto; //中央寄せ
-    // margin-block-start: $spacing_4xl;
     color: $color_text;
     text-align: center;
     padding-block: 1rem;
@@ -308,7 +320,7 @@ body {
     border-radius: 20px;
     // margin: 1rem;
     margin: $spacing_4xl auto; //中央寄せ
-    // margin-block-start: $spacing_4xl;
+    margin-block-end: 40px;
     color: $color_text;
     text-align: center;
     padding-block: 1rem;
@@ -404,6 +416,7 @@ body {
     background-color: $color_sectionBg;
     border-radius: 20px;
     margin: $spacing_4xl auto; //中央寄せ
+    margin-block-start: 45px;
     color: $color_text;
     text-align: center;
     padding-block: 1rem;
@@ -411,18 +424,21 @@ body {
 
     position: relative;
 
+    // 写真とテキスト、両矢印のdiv
     .slider {
       position: relative;
       width: 100%;
       overflow: hidden;
       border-radius: 20px;
 
+      // 写真とテキストを括るdiv部分
       .slider-wrap {
         display: flex;
         transition: transform 0.5s ease;
         height: auto;
       }
 
+      // 写真とテキストの各セット部分
       .slider-wrap-text {
         width: 100%;
         flex-shrink: 0;
@@ -440,16 +456,18 @@ body {
           box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
+        // 下線付きテキスト
         .guide-title {
+          display: inline-block; // 下線をテキスト幅に限定
           font-weight: $font_black;
           font-size: 15px;
           line-height: 1.1;
           color: $color_text;
           border-bottom: 2px solid $color_text; // ← 線の太さ・色を自由に設定
-          display: inline-block; // 下線をテキスト幅に限定
           margin-block-start: 40px;
         }
 
+        // 本文テキスト
         .guide {
           margin-top: 0.5rem;
           font-size: 14px;
@@ -460,6 +478,7 @@ body {
         }
       }
 
+      // 両矢印部分の設定
       .arrow-left,
       .arrow-right {
         position: absolute;
@@ -491,11 +510,11 @@ body {
       }
 
       .arrow-left {
-        left: 10px;
+        left: 0px;
       }
 
       .arrow-right {
-        right: 10px;
+        right: 0px;
       }
     }
   }
@@ -538,5 +557,85 @@ body {
     //位置を調整してから回転させる
     transform: translate(19px, 63px) //左に20px 下に10px
       rotate(272deg);
+  }
+
+  // ---------------------------------------------
+  // アクセス欄
+  #Access {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 2000px;
+    max-width: 358px;
+
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    margin: $spacing_4xl auto; //中央寄せ
+    color: $color_text;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    // 各項目の左揃え調整
+    .access-wrapper {
+      width: 100%; //親セクションと同じ幅
+      padding-inline: 1rem;
+      text-align: left;
+    }
+
+    // 各項目、見出し部分
+    .item {
+      font-weight: $font_bold;
+      font-size: 18px;
+      line-height: 10px;
+      color: $color_text;
+      padding-block: 1rem 0.5rem;
+      border-bottom: 1px solid $color_text; //下線
+      // display: inline-block; //下線をテキスト幅に
+      display: block;
+      width: 100%;
+      margin-block-start: 1rem;
+      text-align: left;
+    }
+
+    // 各項目の中身
+    ul {
+      padding: 0;
+      font-size: 16px;
+      font-weight: $font_bold;
+      line-height: 18px;
+      text-align: left;
+
+      li {
+        margin-block: 0.5rem;
+      }
+    }
+
+    // Instagram投稿の部分
+    #instagram-post {
+      display: block;
+
+      width: 100%; // 親要素の幅を使う
+      max-width: 358px; //カンプのサイズに合わせてこれを維持
+      margin: 2rem auto;
+      // overflow: visible;
+    }
+
+    // Googleマップのiframeのスタイル
+    iframe {
+      max-width: 100%; /* セクション幅を超えないようにする */
+      height: auto;
+      aspect-ratio: 1/1;
+      margin-block-start: $spacing_xl;
+      border-radius: 20px; /* 角丸 */
+      border: none;
+      overflow: visible;
+    }
+  }
+
+  #Access,
+  #instagram-post,
+  iframe {
+    overflow: visible !important;
   }
 }

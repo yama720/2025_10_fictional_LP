@@ -577,21 +577,29 @@ body {
 }
 body #top-img {
   margin-block-end: 80px;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
 }
 body #top-img img {
   width: 390px;
   height: 680px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 body #Concept {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  align-items: center;
   background-image: url(../../images/texture2.png);
   background-repeat: no-repeat; /* 画像の繰り返しを指定  */
   width: 340px;
   height: 540px;
   border-radius: 20px;
-  margin: 1rem;
+  margin: 80px auto;
+  margin-block-end: 0;
   position: relative;
   color: #593622;
 }
@@ -633,6 +641,8 @@ body #Concept-hd {
 body .Reserve-btn {
   display: flex;
   justify-content: center;
+  flex-flow: column;
+  align-items: center;
 }
 body .Reserve-btn .btn {
   display: block;
@@ -653,6 +663,12 @@ body .Reserve-btn .btn {
 }
 body .btn:hover {
   background-color: #e17066;
+}
+body #shop-counter {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
 }
 body #shop-counter img {
   width: 390px;
@@ -789,6 +805,7 @@ body #Menu {
   background-color: #fcf5e3;
   border-radius: 20px;
   margin: 80px auto;
+  margin-block-end: 40px;
   color: #593622;
   text-align: center;
   padding-block: 1rem;
@@ -859,6 +876,7 @@ body #Space {
   background-color: #fcf5e3;
   border-radius: 20px;
   margin: 80px auto;
+  margin-block-start: 45px;
   color: #593622;
   text-align: center;
   padding-block: 1rem;
@@ -893,12 +911,12 @@ body #Space .slider .slider-wrap-text img {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 body #Space .slider .slider-wrap-text .guide-title {
+  display: inline-block;
   font-weight: 900;
   font-size: 15px;
   line-height: 1.1;
   color: #593622;
   border-bottom: 2px solid #593622;
-  display: inline-block;
   margin-block-start: 40px;
 }
 body #Space .slider .slider-wrap-text .guide {
@@ -938,10 +956,10 @@ body #Space .slider .arrow-right:hover {
   opacity: 0.7;
 }
 body #Space .slider .arrow-left {
-  left: 10px;
+  left: 0px;
 }
 body #Space .slider .arrow-right {
-  right: 10px;
+  right: 0px;
 }
 body #Space::before {
   content: "";
@@ -968,4 +986,65 @@ body #Space::after {
   bottom: 0;
   left: 0;
   transform: translate(19px, 63px) rotate(272deg);
+}
+body #Access {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 2000px;
+  max-width: 358px;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 80px auto;
+  color: #593622;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+}
+body #Access .access-wrapper {
+  width: 100%;
+  padding-inline: 1rem;
+  text-align: left;
+}
+body #Access .item {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 10px;
+  color: #593622;
+  padding-block: 1rem 0.5rem;
+  border-bottom: 1px solid #593622;
+  display: block;
+  width: 100%;
+  margin-block-start: 1rem;
+  text-align: left;
+}
+body #Access ul {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: left;
+}
+body #Access ul li {
+  margin-block: 0.5rem;
+}
+body #Access #instagram-post {
+  display: block;
+  width: 100%;
+  max-width: 358px;
+  margin: 2rem auto;
+}
+body #Access iframe {
+  max-width: 100%; /* セクション幅を超えないようにする */
+  height: auto;
+  aspect-ratio: 1/1;
+  margin-block-start: 52px;
+  border-radius: 20px; /* 角丸 */
+  border: none;
+  overflow: visible;
+}
+body #Access,
+body #instagram-post,
+body iframe {
+  overflow: visible !important;
 }/*# sourceMappingURL=style.css.map */
