@@ -568,18 +568,52 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+}
+footer #home-logo a {
+  display: inline-block;
+  line-height: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+footer #home-logo a:hover {
+  transform: scale(1.3);
 }
 footer #home-logo .logo {
-  width: 60px;
-  height: 60px;
+  width: 84px;
+  height: 84px;
   -o-object-fit: contain;
      object-fit: contain;
+  display: block;
+}
+footer .sns-wrap {
+  padding-block: 35px;
+  margin-block-end: 80px;
+}
+footer .sns-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+footer .sns-nav li {
+  list-style: none;
+}
+footer .sns-nav li a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+footer .sns-nav li a:hover {
+  transform: scale(1.3);
 }
 footer .sns-nav img {
   width: 30px;
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
+  display: block;
 }
 
 @font-face {
@@ -612,7 +646,7 @@ body #Concept {
   flex-flow: column;
   align-items: center;
   background-image: url(/images/texture2.png);
-  background-repeat: no-repeat; /* 画像の繰り返しを指定  */
+  background-repeat: no-repeat;
   width: 340px;
   height: 540px;
   border-radius: 20px;
@@ -680,7 +714,7 @@ body .Reserve-btn .btn {
   transition: background-color 0.3s ease;
 }
 body .btn:hover {
-  background-color: #e17066;
+  background-color: rgba(85, 6, 179, 0.6);
 }
 body #shop-counter {
   display: flex;
@@ -863,7 +897,7 @@ body #Menu::after {
   transform: translate(19px, 63px) rotate(272deg);
 }
 body .menu-item {
-  margin-bottom: 125px; /* 各メニュー項目間の縦の余白を調整 */
+  margin-bottom: 125px;
 }
 body .menu-item h3 {
   padding-inline: 1rem;
@@ -956,7 +990,7 @@ body #Space .slider .arrow-right {
   width: 36px;
   height: 36px;
   cursor: pointer;
-  z-index: 10; /* スライドコンテンツ（通常 z-index: 1 など）よりも大きな値を設定 */
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1022,7 +1056,6 @@ body #Access {
   position: relative;
 }
 body #Access .heading {
-  /* マージンをリセットし、下部余白だけを指定 */
   margin-block: 0;
   padding: 0;
 }
@@ -1081,7 +1114,7 @@ body #Access #google-map iframe {
   height: auto;
   aspect-ratio: 1/1;
   margin-block-start: 52px;
-  border-radius: 20px; /* 角丸 */
+  border-radius: 20px;
   border: none;
   overflow: visible;
 }

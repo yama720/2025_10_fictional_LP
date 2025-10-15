@@ -4,19 +4,58 @@
 // -----------------------------------
 // フッター部分
 
-// -----------------------------------
-// フッター部分
-
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 
   #home-logo {
+    a {
+      display: inline-block; //ブロック化してサイズ設定を行う
+      line-height: 0; //リンクの下の余白消す
+      padding: 0; //一旦リセット
+
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.3); //ホバー時に1.3倍に拡大
+      }
+    }
+
     .logo {
-      width: 60px;
-      height: 60px;
+      width: 84px;
+      height: 84px;
       object-fit: contain; // 比率を維持
+      display: block; //imgをブロック化
+    }
+  }
+
+  .sns-wrap {
+    padding-block: 35px;
+    margin-block-end: 80px;
+  }
+
+  .sns-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+
+    li {
+      list-style: none;
+
+      a {
+        display: block; //ブロック化してサイズを画像に合わせる
+        width: 30px; //リンク領域の幅を設定
+        height: 30px; //リンク領域の高さを設定
+        line-height: 0; //リンクの下の余白消す
+
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.3); //ホバー時に1.3倍に拡大
+        }
+      }
     }
   }
 
@@ -24,5 +63,6 @@ footer {
     width: 30px;
     height: 30px;
     object-fit: contain;
+    display: block; //imgをブロック化
   }
 }
