@@ -98,7 +98,7 @@ body#yamadaWrapper {
       }
     }
     .btn:hover {
-      background-color: #e17066; //ホバー背景色
+      background-color: $color_hoverBg; //ホバー背景色
     }
 
     .logo {
@@ -172,7 +172,7 @@ body#yamadaWrapper {
             }
           }
           a:hover {
-            color: $color_heading; //ホバー背景色
+            color: $color_hoverBg; //ホバー背景色
           }
         }
       }

@@ -453,7 +453,7 @@ body#yamadaWrapper .cover-home .buy-wrapper .btn {
   }
 }
 body#yamadaWrapper .cover-home .btn:hover {
-  background-color: #e17066;
+  background-color: rgba(85, 6, 179, 0.6);
 }
 body#yamadaWrapper .cover-home .logo {
   width: 130px;
@@ -529,7 +529,7 @@ body#yamadaWrapper .cover-home .drawerMenu .main-nav li a {
   }
 }
 body#yamadaWrapper .cover-home .drawerMenu .main-nav li a:hover {
-  color: #bfae9f;
+  color: rgba(85, 6, 179, 0.6);
 }
 body#yamadaWrapper .cover-home .drawerMenu .sns-nav {
   list-style: none;
@@ -562,6 +562,24 @@ body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img {
 }
 body#yamadaWrapper .cover-home .drawerMenu .sns-nav img:hover {
   transform: scale(1.2, 1.2);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer #home-logo .logo {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+footer .sns-nav img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @font-face {
@@ -992,19 +1010,40 @@ body #Access {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 2000px;
+  height: 1880px;
   max-width: 358px;
   background-color: #fcf5e3;
   border-radius: 20px;
   margin: 80px auto;
+  margin-block-end: 40px;
   color: #593622;
   padding-block: 1rem;
   padding-inline: 1rem;
+  position: relative;
+}
+body #Access .heading {
+  /* マージンをリセットし、下部余白だけを指定 */
+  margin-block: 0;
+  padding: 0;
 }
 body #Access .access-wrapper {
   width: 100%;
   padding-inline: 1rem;
   text-align: left;
+}
+body #Access .access-wrapper #instagram-post {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto;
+  margin-block-start: 3rem;
+  overflow: visible;
+  flex-shrink: 0;
+  min-height: 1px;
+}
+body #Access .access-wrapper #instagram-post .instagram-media {
+  margin: 0 auto !important;
+  padding: 0 !important;
 }
 body #Access .item {
   font-weight: 700;
@@ -1013,13 +1052,13 @@ body #Access .item {
   color: #593622;
   padding-block: 1rem 0.5rem;
   border-bottom: 1px solid #593622;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: auto;
   margin-block-start: 1rem;
-  text-align: left;
 }
 body #Access ul {
   padding: 0;
+  padding-inline-start: 1.5rem;
   font-size: 16px;
   font-weight: 700;
   line-height: 18px;
@@ -1027,14 +1066,17 @@ body #Access ul {
 }
 body #Access ul li {
   margin-block: 0.5rem;
+  padding-block-start: 1rem;
 }
-body #Access #instagram-post {
-  display: block;
-  width: 100%;
-  max-width: 358px;
-  margin: 2rem auto;
+body #Access ul li::marker {
+  font-size: 10px;
+  vertical-align: middle;
 }
-body #Access iframe {
+body #Access ul:last-of-type li:last-child {
+  list-style: none;
+  padding-left: 0;
+}
+body #Access #google-map iframe {
   max-width: 100%; /* セクション幅を超えないようにする */
   height: auto;
   aspect-ratio: 1/1;
@@ -1047,4 +1089,55 @@ body #Access,
 body #instagram-post,
 body iframe {
   overflow: visible !important;
+}
+body #Access::before {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Access::after {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
+body #to-top-btn {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #bfae9f;
+  color: #fcf5e3;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+body #to-top-btn:hover {
+  background-color: rgba(85, 6, 179, 0.6);
+}
+body #to-top-btn.visible {
+  display: block;
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

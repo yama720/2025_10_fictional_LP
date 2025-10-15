@@ -566,21 +566,52 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 2000px;
+    height: 1880px;
     max-width: 358px;
 
     background-color: $color_sectionBg;
     border-radius: 20px;
     margin: $spacing_4xl auto; //中央寄せ
+    margin-block-end: 40px;
     color: $color_text;
     padding-block: 1rem;
     padding-inline: 1rem;
+
+    position: relative;
+
+    // h2の箇所
+    .heading {
+      /* マージンをリセットし、下部余白だけを指定 */
+      margin-block: 0;
+      padding: 0;
+    }
 
     // 各項目の左揃え調整
     .access-wrapper {
       width: 100%; //親セクションと同じ幅
       padding-inline: 1rem;
       text-align: left;
+
+      // Instagram投稿の部分
+      #instagram-post {
+        display: flex;
+        justify-content: center;
+        // display: block;
+        width: 100%; // 親要素の幅を使う
+
+        margin: 1rem auto;
+        margin-block-start: 3rem;
+        overflow: visible;
+
+        flex-shrink: 0; //Flexboxの圧縮を停止
+        min-height: 1px; // Flexboxのバグ対策として小さすぎる値で設定
+
+        .instagram-media {
+          // ブラウザや親要素から継承されるマージン/パディングをリセット
+          margin: 0 auto !important;
+          padding: 0 !important;
+        }
+      }
     }
 
     // 各項目、見出し部分
@@ -591,16 +622,15 @@ body {
       color: $color_text;
       padding-block: 1rem 0.5rem;
       border-bottom: 1px solid $color_text; //下線
-      // display: inline-block; //下線をテキスト幅に
-      display: block;
-      width: 100%;
+      display: inline-block; //下線をテキスト幅に
+      width: auto;
       margin-block-start: 1rem;
-      text-align: left;
     }
 
     // 各項目の中身
     ul {
       padding: 0;
+      padding-inline-start: 1.5rem;
       font-size: 16px;
       font-weight: $font_bold;
       line-height: 18px;
@@ -608,21 +638,25 @@ body {
 
       li {
         margin-block: 0.5rem;
+        padding-block-start: 1rem;
+
+        //箇条書きの点のサイズを li の文字サイズに合わせる設定
+        &::marker {
+          font-size: 10px;
+          // -----------------何故か変わらない！！！！！！！！
+          vertical-align: middle; //垂直位置を中央に調整する
+        }
       }
     }
 
-    // Instagram投稿の部分
-    #instagram-post {
-      display: block;
-
-      width: 100%; // 親要素の幅を使う
-      max-width: 358px; //カンプのサイズに合わせてこれを維持
-      margin: 2rem auto;
-      // overflow: visible;
+    // 住所の ul の最後の li のマーカーを消す
+    ul:last-of-type li:last-child {
+      list-style: none; //非表示
+      padding-left: 0; //マーカーが消えたことによる左の余白も消す
     }
 
-    // Googleマップのiframeのスタイル
-    iframe {
+    // // Googleマップのiframeのスタイル
+    #google-map iframe {
       max-width: 100%; /* セクション幅を超えないようにする */
       height: auto;
       aspect-ratio: 1/1;
@@ -637,5 +671,82 @@ body {
   #instagram-post,
   iframe {
     overflow: visible !important;
+  }
+
+  // 装飾の草　上部
+  #Access::before {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) //左に20px 下に10px
+      rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Access::after {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) //左に20px 下に10px
+      rotate(272deg);
+  }
+
+  // ---------------------------------
+  // サイトトップに戻るボタン
+  #to-top-btn {
+    display: none; //初期状態は非表示に
+    opacity: 0; //フェードインとアウトのため初期透明度を0にしておく
+
+    //位置の固定
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    //ボタンのデザイン
+    width: 60px;
+    height: 60px;
+    background-color: $color_heading;
+    color: $color_sectionBg;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px; //垂直方向の中央揃え
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    //アニメーション設定
+    transition: opacity 0.3s, visibility 0.3s;
+
+    &:hover {
+      background-color: $color_hoverBg; // ホバーで変わる色
+    }
+  }
+
+  //ボタンが出現した時の状態
+  #to-top-btn.visible {
+    display: block; // display: none を上書きするため必要
+    opacity: 1;
   }
 }
