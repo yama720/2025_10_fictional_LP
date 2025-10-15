@@ -361,48 +361,42 @@ body#yamadaWrapper {
 }
 body#yamadaWrapper .cover-home {
   background-color: #f8e6e4;
-  width: auto;
-  height: 200px;
+  width: 100%;
+  min-width: 800px;
 }
 @media (width < 800px) {
   body#yamadaWrapper .cover-home {
-    width: auto;
-    height: 100dvh;
+    width: 100%;
+    min-width: auto;
+    height: auto;
   }
 }
 @media (width < 800px) and (width < 430px) {
   body#yamadaWrapper .cover-home {
-    width: auto;
-    height: 100dvh;
+    width: 100%;
+    height: auto;
   }
 }
 body#yamadaWrapper .cover-home .page-header {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  display: flex;
 }
 @media (width < 800px) {
   body#yamadaWrapper .cover-home .page-header {
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 0;
   }
 }
-body#yamadaWrapper .cover-home .hd-wraper01 {
-  display: flex;
-  align-items: center;
-}
-@media (width < 800px) {
-  body#yamadaWrapper .cover-home .hd-wraper01 {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+body#yamadaWrapper .cover-home .hd-wraper01,
 body#yamadaWrapper .cover-home .hd-wraper02 {
   display: flex;
   align-items: center;
 }
 @media (width < 800px) {
+  body#yamadaWrapper .cover-home .hd-wraper01,
   body#yamadaWrapper .cover-home .hd-wraper02 {
     flex-direction: column;
     align-items: center;
@@ -480,11 +474,36 @@ body#yamadaWrapper .cover-home .logo {
     left: 16px;
   }
 }
-@media (width < 800px) {
+@media (max-width: 800px) {
   body#yamadaWrapper .cover-home .drawerMenu {
-    display: flex;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    display: none;
     flex-direction: column;
     justify-content: center;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+  }
+  body#yamadaWrapper .cover-home .drawerMenu.active {
+    display: flex !important;
+    opacity: 1;
+  }
+}
+@media (min-width: 800px) {
+  body#yamadaWrapper .cover-home .drawerMenu {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    background: transparent;
+    opacity: 1;
+    z-index: auto;
   }
 }
 body#yamadaWrapper .cover-home .drawerMenu .drawerMenu-nv {
@@ -502,7 +521,7 @@ body#yamadaWrapper .cover-home .drawerMenu .main-nav {
     text-align: center;
     gap: 64px;
     margin-block: 64px;
-    margin-block-start: 150px;
+    margin-block-start: 0;
   }
 }
 @media (width < 800px) and (width < 430px) {
@@ -546,11 +565,6 @@ body#yamadaWrapper .cover-home .drawerMenu .sns-nav li {
     margin-block: 0;
   }
 }
-@media (width < 800px) and (width < 430px) {
-  body#yamadaWrapper .cover-home .drawerMenu .sns-nav li {
-    margin-block: 0;
-  }
-}
 body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img {
   width: 40px;
   height: auto;
@@ -560,8 +574,8 @@ body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img {
     width: 30px;
   }
 }
-body#yamadaWrapper .cover-home .drawerMenu .sns-nav img:hover {
-  transform: scale(1.2, 1.2);
+body#yamadaWrapper .cover-home .drawerMenu .sns-nav li a img:hover {
+  transform: scale(1.2);
 }
 
 footer {

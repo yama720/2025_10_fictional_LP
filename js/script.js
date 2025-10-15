@@ -11,11 +11,19 @@ function drawerButton() {
   dMenu.classList.toggle('active');
 }
 
-// メニューリンクをクリックしたら閉じる処理
-document.querySelectorAll('.drawerMenu a').forEach((link) => {
-  link.addEventListener('click', () => {
-    document.querySelector('.drawerButton').classList.remove('active');
-    document.querySelector('.drawerMenu').classList.remove('active');
+/// HTMLが読み込まれたあとにイベント登録する
+document.addEventListener('DOMContentLoaded', () => {
+  const dButton = document.querySelector('.drawerButton');
+
+  // ← ここでonclickをJSから設定
+  dButton.addEventListener('click', drawerButton);
+
+  // メニューリンクをクリックしたら閉じる処理
+  document.querySelectorAll('.drawerMenu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      dButton.classList.remove('active');
+      document.querySelector('.drawerMenu').classList.remove('active');
+    });
   });
 });
 
