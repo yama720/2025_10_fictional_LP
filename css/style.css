@@ -332,20 +332,6 @@ header .drawerButton.active span:nth-child(3) {
   transform: rotate(-45deg);
   left: 13px;
 }
-header .drawerMenu {
-  width: 100%;
-  height: 100dvh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  z-index: 1000;
-  top: -150vh;
-  right: 0;
-  transition: top 0.3s ease-out;
-  position: static;
-  height: auto;
-}
 
 .drawerMenu.active {
   top: 0;
@@ -407,6 +393,7 @@ body#yamadaWrapper .cover-home .sp-show img {
   width: 100%;
   height: auto;
   max-width: 100px;
+  padding-block-end: 52px;
 }
 @media (width <= 800px) {
   body#yamadaWrapper .cover-home .sp-show {
@@ -473,6 +460,20 @@ body#yamadaWrapper .cover-home .logo {
     left: 16px;
   }
 }
+body#yamadaWrapper .cover-home .drawerMenu {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: -150vh;
+  right: 0;
+  transition: top 0.3s ease-out;
+  position: static;
+  height: auto;
+}
 @media (width <= 800px) {
   body#yamadaWrapper .cover-home .drawerMenu {
     position: fixed !important;
@@ -480,7 +481,7 @@ body#yamadaWrapper .cover-home .logo {
     left: 0;
     width: 100%;
     height: 100dvh;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #f0f0f0;
     z-index: 9999;
     display: none;
     flex-direction: column;
@@ -491,6 +492,7 @@ body#yamadaWrapper .cover-home .logo {
   body#yamadaWrapper .cover-home .drawerMenu.active {
     display: flex !important;
     opacity: 1;
+    padding-block-start: 100px;
   }
 }
 body#yamadaWrapper .cover-home .drawerMenu .drawerMenu-nv {
@@ -507,7 +509,7 @@ body#yamadaWrapper .cover-home .drawerMenu .main-nav {
     flex-direction: column;
     text-align: center;
     gap: 64px;
-    margin-block: 64px;
+    padding-block-end: 40px;
     margin-block-start: 0;
   }
 }
@@ -570,6 +572,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  padding-block-start: 80px;
 }
 footer #home-logo a {
   display: inline-block;
@@ -621,6 +624,146 @@ footer .sns-nav img {
   font-family: "JejuHallasan";
   src: url("../../fonts/JejuHallasan.ttf.woff") format("woff");
 }
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+img {
+  height: auto;
+}
+
+body {
+  background-color: #e9ead3;
+}
+body .reservation-top {
+  width: 390px;
+  height: 271px;
+}
+body .reservation-top img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: 195px;
+  height: 271px;
+}
+body #Reservation {
+  text-align: center;
+}
+body #Dine-in,
+body #Take-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  max-width: 358px;
+  width: 100%;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 32px auto;
+  color: #593622;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+body #Dine-in .heading,
+body #Take-out .heading {
+  position: relative;
+  top: -35px;
+  left: -90px;
+  font-family: "JejuHallasan";
+  font-size: 36px;
+  line-height: 1;
+  color: #6b7a47;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3, 0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3, 1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
+}
+body #Dine-in .reservation-wrapper,
+body #Take-out .reservation-wrapper {
+  width: 100%;
+}
+body #Dine-in > #Dine-in, body #Dine-in > #Take-out,
+body #Take-out > #Dine-in,
+body #Take-out > #Take-out {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+body #Dine-in::before {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Dine-in::after {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
+body #Take-out::before {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Take-out::after {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
+
+@font-face {
+  font-family: "JejuHallasan";
+  src: url("../../fonts/JejuHallasan.ttf.woff") format("woff");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
 img {
   height: auto;
 }
@@ -629,7 +772,6 @@ body {
   background-color: #e9ead3;
 }
 body #top-img {
-  margin-block-end: 80px;
   display: flex;
   justify-content: flex-start;
   flex-flow: column;
@@ -656,10 +798,11 @@ body #Concept {
   width: 340px;
   height: 540px;
   border-radius: 20px;
-  margin: 80px auto;
-  margin-block-end: 0;
+  margin-inline: auto;
+  margin-block-end: 20px;
   position: relative;
   color: #593622;
+  scroll-margin-top: 100px;
 }
 body #Concept p {
   font-size: 17px;
@@ -708,7 +851,6 @@ body .Reserve-btn .btn {
   height: 61px;
   padding-block: 19px;
   padding-inline: 16px;
-  margin-block: 80px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -743,12 +885,13 @@ body #Special {
   height: 1027px;
   background-color: #fcf5e3;
   border-radius: 20px;
-  margin: 80px auto;
+  margin: 32px auto;
   color: #593622;
   text-align: center;
   padding-block: 1rem;
   padding-inline: 1rem;
   position: relative;
+  scroll-margin-top: 100px;
 }
 body #Special img {
   width: 333px;
@@ -862,13 +1005,14 @@ body #Menu {
   height: 2929px;
   background-color: #fcf5e3;
   border-radius: 20px;
-  margin: 80px auto;
+  margin: 32px auto;
   margin-block-end: 40px;
   color: #593622;
   text-align: center;
   padding-block: 1rem;
   padding-inline: 1rem;
   position: relative;
+  scroll-margin-top: 80px;
 }
 body #Menu .menu-header {
   display: flex;
@@ -933,13 +1077,13 @@ body #Space {
   height: 473px;
   background-color: #fcf5e3;
   border-radius: 20px;
-  margin: 80px auto;
-  margin-block-start: 45px;
+  margin: 32px auto;
   color: #593622;
   text-align: center;
   padding-block: 1rem;
   padding-inline: 1rem;
   position: relative;
+  scroll-margin-top: 100px;
 }
 body #Space .slider {
   position: relative;
@@ -1054,12 +1198,12 @@ body #Access {
   max-width: 358px;
   background-color: #fcf5e3;
   border-radius: 20px;
-  margin: 80px auto;
-  margin-block-end: 40px;
+  margin: 32px auto;
   color: #593622;
   padding-block: 1rem;
   padding-inline: 1rem;
   position: relative;
+  scroll-margin-top: 80px;
 }
 body #Access .heading {
   margin-block: 0;

@@ -1,5 +1,6 @@
 @use '../base/variables' as *;
 @use '../vendors' as *;
+@forward '../pages/reservation';
 
 // ----------------------------------
 // 独自のフォント指定
@@ -8,6 +9,16 @@
   src: url('../../fonts/JejuHallasan.ttf.woff') format('woff');
 }
 // ----------------------------------
+
+html {
+  scroll-behavior: smooth; //スムーズにスクロールする
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
 
 img {
   // max-width: 100%;
@@ -18,8 +29,6 @@ body {
   background-color: $color_bg;
 
   #top-img {
-    margin-block-end: $spacing_4xl;
-
     display: flex;
     justify-content: flex-start;
     flex-flow: column;
@@ -49,10 +58,11 @@ body {
     width: 340px;
     height: 540px;
     border-radius: 20px;
-    margin: $spacing_4xl auto;
-    margin-block-end: 0;
+    margin-inline: auto;
+    margin-block-end: 20px;
     position: relative;
     color: $color_text;
+    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
 
     p {
       font-size: 17px;
@@ -111,7 +121,6 @@ body {
       height: 61px;
       padding-block: 19px;
       padding-inline: $spacing_s;
-      margin-block: $spacing_4xl;
       text-align: center;
       text-decoration: none;
       font-size: $font_text;
@@ -145,6 +154,7 @@ body {
     justify-content: flex-start;
     flex-flow: column;
     align-items: center;
+
     img {
       width: 390px;
       height: 249px;
@@ -165,13 +175,15 @@ body {
     background-color: $color_sectionBg;
     border-radius: 20px;
     // margin: 1rem;
-    margin: $spacing_4xl auto; //中央寄せ
+    margin: $spacing_x auto; //中央寄せ
     color: $color_text;
     text-align: center;
     padding-block: 1rem;
     padding-inline: 1rem;
 
     position: relative;
+
+    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
 
     img {
       width: 333px;
@@ -323,7 +335,7 @@ body {
     background-color: $color_sectionBg;
     border-radius: 20px;
     // margin: 1rem;
-    margin: $spacing_4xl auto; //中央寄せ
+    margin: $spacing_x auto; //中央寄せ
     margin-block-end: 40px;
     color: $color_text;
     text-align: center;
@@ -331,6 +343,8 @@ body {
     padding-inline: 1rem;
 
     position: relative;
+
+    scroll-margin-top: 80px; // ヘッダーの高さに合わせて調整
 
     //メニュータイトルと値段の横並び
     .menu-header {
@@ -417,14 +431,15 @@ body {
     height: 473px;
     background-color: $color_sectionBg;
     border-radius: 20px;
-    margin: $spacing_4xl auto; //中央寄せ
-    margin-block-start: 45px;
+    margin: $spacing_x auto; //中央寄せ
     color: $color_text;
     text-align: center;
     padding-block: 1rem;
     padding-inline: 1rem;
 
     position: relative;
+
+    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
 
     // 写真とテキスト、両矢印のdiv
     .slider {
@@ -571,13 +586,15 @@ body {
 
     background-color: $color_sectionBg;
     border-radius: 20px;
-    margin: $spacing_4xl auto; //中央寄せ
-    margin-block-end: 40px;
+    margin: $spacing_x auto; //中央寄せ
+    // margin-block-end: 40px;
     color: $color_text;
     padding-block: 1rem;
     padding-inline: 1rem;
 
     position: relative;
+
+    scroll-margin-top: 80px; // ヘッダーの高さに合わせて調整
 
     // h2の箇所
     .heading {

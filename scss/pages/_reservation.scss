@@ -1,0 +1,174 @@
+@use '../base/variables' as *;
+@use '../vendors' as *;
+
+// ----------------------------------
+// 独自のフォント指定
+@font-face {
+  font-family: 'JejuHallasan';
+  src: url('../../fonts/JejuHallasan.ttf.woff') format('woff');
+}
+// ----------------------------------
+
+html {
+  scroll-behavior: smooth; //スムーズにスクロールする
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+img {
+  // max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: $color_bg;
+
+  // ---------------------------------------------
+  // 予約欄
+
+  .reservation-top {
+    width: 390px;
+    height: 271px;
+
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      width: 195px;
+      height: 271px;
+    }
+  }
+
+  #Reservation {
+    text-align: center;
+  }
+
+  #Dine-in,
+  #Take-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    max-width: 358px;
+    width: 100%; // 親要素の幅を使う
+
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    margin: $spacing_x auto; //中央寄せ
+    color: $color_text;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+    scroll-margin-top: 80px;
+
+    // 見出し
+    .heading {
+      position: relative;
+      top: -35px;
+      left: -90px;
+      font-family: $font_cp;
+      font-size: 36px;
+      line-height: 1;
+      color: $color_text2;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3,
+        0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3,
+        1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
+    }
+
+    .reservation-wrapper {
+      width: 100%;
+    }
+
+    // #Dine-in と #Take-out のセクション間の間隔
+    & > #Dine-in,
+    & > #Take-out {
+      width: 100%;
+      margin-bottom: 2rem; // セクション間の余白
+    }
+  }
+
+  // 装飾の草　上部
+  #Dine-in::before {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Dine-in::after {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) rotate(272deg);
+  }
+
+  // 装飾の草　上部
+  #Take-out::before {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Take-out::after {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) rotate(272deg);
+  }
+}

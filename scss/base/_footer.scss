@@ -10,6 +10,8 @@ footer {
   align-items: center;
   flex-direction: column;
 
+  padding-block-start: 80px; //mainとの間の余白
+
   #home-logo {
     a {
       display: inline-block; //ブロック化してサイズ設定を行う
