@@ -49,53 +49,47 @@ body {
     text-align: center;
   }
 
+  //   --------------------------------
   #Dine-in,
   #Take-out {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    max-width: 358px;
-    width: 100%; // 親要素の幅を使う
+    width: 358px;
+    height: 599px;
+  }
 
-    background-color: $color_sectionBg;
-    border-radius: 20px;
-    margin: $spacing_x auto; //中央寄せ
-    color: $color_text;
-    padding-block: 1rem;
-    padding-inline: 1rem;
+  //   ------------------------------------------
+  // Dine-in / Take-out のブロック内のフォーム要素
+  .dinein-block,
+  .takeout-block {
+    border-radius: 15px;
+    padding: 1.5rem; // ブロック内側の余白は維持または少し増やしても良い
+    text-align: left;
 
-    position: relative;
-    scroll-margin-top: 80px;
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem; /* フォーム項目間の余白を1.5rem (24px) に増やす */
 
-    // 見出し
-    .heading {
-      position: relative;
-      top: -35px;
-      left: -90px;
-      font-family: $font_cp;
-      font-size: 36px;
-      line-height: 1;
-      color: $color_text2;
-      margin-bottom: 0.75rem;
-      text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3,
-        0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3,
-        1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
-    }
+      label {
+        font-size: 14px;
+        font-weight: $font_bold;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; /* ラベルテキストと入力欄の間の余白を増やす */
+      }
 
-    .reservation-wrapper {
-      width: 100%;
-    }
-
-    // #Dine-in と #Take-out のセクション間の間隔
-    & > #Dine-in,
-    & > #Take-out {
-      width: 100%;
-      margin-bottom: 2rem; // セクション間の余白
+      input,
+      select {
+        padding: 0.75rem 0.6rem; /* 入力欄の内側の上下パディングを増やして高さを出す */
+        border: none;
+        border-radius: 8px;
+        background-color: #fff;
+        font-size: 14px;
+      }
     }
   }
 
+  //   ------------------------------------------
+  // Dine-inの装飾
   // 装飾の草　上部
   #Dine-in::before {
     content: ''; //空箱用意
@@ -134,6 +128,8 @@ body {
     transform: translate(19px, 63px) rotate(272deg);
   }
 
+  //   ------------------------------------------
+  // Take-outの装飾
   // 装飾の草　上部
   #Take-out::before {
     content: ''; //空箱用意
@@ -155,6 +151,68 @@ body {
 
   // 装飾の草　下部
   #Take-out::after {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    bottom: 0;
+    left: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(19px, 63px) rotate(272deg);
+  }
+
+  //   -----------------------------------
+  // 注意事項欄
+  #Attention {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    max-width: 358px;
+    width: 100%; // 親要素の幅を使う
+
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    margin: $spacing_x auto; //中央寄せ
+    color: $color_text;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+    scroll-margin-top: 80px;
+  }
+
+  //   ------------------------------------------
+  // Attentionの装飾
+  // 装飾の草　上部
+  #Attention::before {
+    content: ''; //空箱用意
+    background-image: url(/images/decoration1.png);
+    background-size: contain; //箱に収める
+    background-repeat: no-repeat; //繰り返しを防ぐ
+    display: block;
+    width: 93.89px;
+    height: 149.31px;
+    position: absolute; //起点
+
+    // 基準点を右上に設定
+    top: 0;
+    right: 0;
+
+    //位置を調整してから回転させる
+    transform: translate(-17px, -64px) rotate(91deg);
+  }
+
+  // 装飾の草　下部
+  #Attention::after {
     content: ''; //空箱用意
     background-image: url(/images/decoration1.png);
     background-size: contain; //箱に収める

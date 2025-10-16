@@ -45,6 +45,31 @@ body {
     }
   }
 
+  // ---------------------------
+  .section-design {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+
+    // width: 358px;
+    // height: 1027px;
+    background-color: $color_sectionBg;
+    border-radius: 20px;
+    // margin: 1rem;
+    margin: $spacing_x auto; //中央寄せ
+    color: $color_text;
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+
+    position: relative;
+
+    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
+  }
+
+  // ---------------------------
+
   // ----------------------------------------------
   // コンセプト欄
   #Concept {
@@ -165,25 +190,8 @@ body {
   // -------------------------------------------------
   // 予約者限定メニュー欄
   #Special {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
-    align-items: center;
-
     width: 358px;
     height: 1027px;
-    background-color: $color_sectionBg;
-    border-radius: 20px;
-    // margin: 1rem;
-    margin: $spacing_x auto; //中央寄せ
-    color: $color_text;
-    text-align: center;
-    padding-block: 1rem;
-    padding-inline: 1rem;
-
-    position: relative;
-
-    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
 
     img {
       width: 333px;
@@ -325,26 +333,8 @@ body {
   // ---------------------------------------------------
   // メニュー欄
   #Menu {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
-    align-items: center;
-
     width: 358px;
     height: 2929px;
-    background-color: $color_sectionBg;
-    border-radius: 20px;
-    // margin: 1rem;
-    margin: $spacing_x auto; //中央寄せ
-    margin-block-end: 40px;
-    color: $color_text;
-    text-align: center;
-    padding-block: 1rem;
-    padding-inline: 1rem;
-
-    position: relative;
-
-    scroll-margin-top: 80px; // ヘッダーの高さに合わせて調整
 
     //メニュータイトルと値段の横並び
     .menu-header {
@@ -422,24 +412,8 @@ body {
   // ---------------------------------------------
   // 店内の内装説明欄
   #Space {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
     width: 358px;
     height: 473px;
-    background-color: $color_sectionBg;
-    border-radius: 20px;
-    margin: $spacing_x auto; //中央寄せ
-    color: $color_text;
-    text-align: center;
-    padding-block: 1rem;
-    padding-inline: 1rem;
-
-    position: relative;
-
-    scroll-margin-top: 100px; // ヘッダーの高さに合わせて調整
 
     // 写真とテキスト、両矢印のdiv
     .slider {
@@ -577,24 +551,8 @@ body {
   // ---------------------------------------------
   // アクセス欄
   #Access {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     height: 1880px;
     max-width: 358px;
-
-    background-color: $color_sectionBg;
-    border-radius: 20px;
-    margin: $spacing_x auto; //中央寄せ
-    // margin-block-end: 40px;
-    color: $color_text;
-    padding-block: 1rem;
-    padding-inline: 1rem;
-
-    position: relative;
-
-    scroll-margin-top: 80px; // ヘッダーの高さに合わせて調整
 
     // h2の箇所
     .heading {

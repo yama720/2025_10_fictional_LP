@@ -659,43 +659,38 @@ body #Reservation {
 }
 body #Dine-in,
 body #Take-out {
+  width: 358px;
+  height: 599px;
+}
+body .dinein-block,
+body .takeout-block {
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: left;
+}
+body .dinein-block .form,
+body .takeout-block .form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: auto;
-  max-width: 358px;
-  width: 100%;
-  background-color: #fcf5e3;
-  border-radius: 20px;
-  margin: 32px auto;
-  color: #593622;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  position: relative;
-  scroll-margin-top: 80px;
+  gap: 1.5rem; /* フォーム項目間の余白を1.5rem (24px) に増やす */
 }
-body #Dine-in .heading,
-body #Take-out .heading {
-  position: relative;
-  top: -35px;
-  left: -90px;
-  font-family: "JejuHallasan";
-  font-size: 36px;
-  line-height: 1;
-  color: #6b7a47;
-  margin-bottom: 0.75rem;
-  text-shadow: 2px 0 0 #fcf5e3, -2px 0 0 #fcf5e3, 0 2px 0 #fcf5e3, 0 -2px 0 #fcf5e3, 1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3, 1.5px -1.5px 0 #fcf5e3, -1.5px -1.5px 0 #fcf5e3;
+body .dinein-block .form label,
+body .takeout-block .form label {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* ラベルテキストと入力欄の間の余白を増やす */
 }
-body #Dine-in .reservation-wrapper,
-body #Take-out .reservation-wrapper {
-  width: 100%;
-}
-body #Dine-in > #Dine-in, body #Dine-in > #Take-out,
-body #Take-out > #Dine-in,
-body #Take-out > #Take-out {
-  width: 100%;
-  margin-bottom: 2rem;
+body .dinein-block .form input,
+body .dinein-block .form select,
+body .takeout-block .form input,
+body .takeout-block .form select {
+  padding: 0.75rem 0.6rem; /* 入力欄の内側の上下パディングを増やして高さを出す */
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
 }
 body #Dine-in::before {
   content: "";
@@ -749,6 +744,49 @@ body #Take-out::after {
   left: 0;
   transform: translate(19px, 63px) rotate(272deg);
 }
+body #Attention {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  max-width: 358px;
+  width: 100%;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 32px auto;
+  color: #593622;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+body #Attention::before {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-17px, -64px) rotate(91deg);
+}
+body #Attention::after {
+  content: "";
+  background-image: url(/images/decoration1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 93.89px;
+  height: 149.31px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(19px, 63px) rotate(272deg);
+}
 
 @font-face {
   font-family: "JejuHallasan";
@@ -787,6 +825,21 @@ body #top-img img {
   body #top-img img {
     margin-block-start: 100px;
   }
+}
+body .section-design {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: center;
+  background-color: #fcf5e3;
+  border-radius: 20px;
+  margin: 32px auto;
+  color: #593622;
+  text-align: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  position: relative;
+  scroll-margin-top: 100px;
 }
 body #Concept {
   display: flex;
@@ -877,21 +930,8 @@ body #shop-counter img {
      object-fit: cover;
 }
 body #Special {
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: column;
-  align-items: center;
   width: 358px;
   height: 1027px;
-  background-color: #fcf5e3;
-  border-radius: 20px;
-  margin: 32px auto;
-  color: #593622;
-  text-align: center;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  position: relative;
-  scroll-margin-top: 100px;
 }
 body #Special img {
   width: 333px;
@@ -997,22 +1037,8 @@ body p {
   text-align: left;
 }
 body #Menu {
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: column;
-  align-items: center;
   width: 358px;
   height: 2929px;
-  background-color: #fcf5e3;
-  border-radius: 20px;
-  margin: 32px auto;
-  margin-block-end: 40px;
-  color: #593622;
-  text-align: center;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  position: relative;
-  scroll-margin-top: 80px;
 }
 body #Menu .menu-header {
   display: flex;
@@ -1069,21 +1095,8 @@ body .menu-item p {
   margin-block-start: 32px;
 }
 body #Space {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   width: 358px;
   height: 473px;
-  background-color: #fcf5e3;
-  border-radius: 20px;
-  margin: 32px auto;
-  color: #593622;
-  text-align: center;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  position: relative;
-  scroll-margin-top: 100px;
 }
 body #Space .slider {
   position: relative;
@@ -1190,20 +1203,8 @@ body #Space::after {
   transform: translate(19px, 63px) rotate(272deg);
 }
 body #Access {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   height: 1880px;
   max-width: 358px;
-  background-color: #fcf5e3;
-  border-radius: 20px;
-  margin: 32px auto;
-  color: #593622;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  position: relative;
-  scroll-margin-top: 80px;
 }
 body #Access .heading {
   margin-block: 0;
