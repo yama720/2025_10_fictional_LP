@@ -13,12 +13,12 @@ body#yamadaWrapper {
     width: 100%;
     min-width: 800px;
 
-    @media (width < 800px) {
+    @media (width <= 800px) {
       width: 100%;
       min-width: auto;
       height: auto;
 
-      @media (width < 430px) {
+      @media (width <= 430px) {
         width: 100%;
         height: auto;
       }
@@ -30,7 +30,7 @@ body#yamadaWrapper {
       position: relative;
       display: flex;
 
-      @media (width < 800px) {
+      @media (width <= 800px) {
         flex-direction: column;
         align-items: center;
         padding-top: 0; //謎の余白の原因。必要に応じて数値入れる
@@ -42,7 +42,7 @@ body#yamadaWrapper {
       display: flex;
       align-items: center;
 
-      @media (width < 800px) {
+      @media (width <= 800px) {
         flex-direction: column;
         align-items: center;
       }
@@ -55,20 +55,22 @@ body#yamadaWrapper {
       img {
         width: 100%;
         height: auto;
-        max-width: 150px; // 最大幅を設定して、画像が大きくなりすぎないようにする
+        max-width: 100px; // 最大幅を設定して、画像が大きくなりすぎないようにする
       }
 
-      @media (width < 800px) {
+      @media (width <= 800px) {
         display: block;
       }
     }
 
     .buy-wrapper {
       flex-shrink: 0;
+
       .btn {
         display: block;
         padding-block: $spacing_s;
         padding-inline: $spacing_xl;
+        margin-inline-start: $spacing_4xl;
         margin-inline-end: $spacing_x;
         margin-block: $spacing_2xl;
         text-align: center;
@@ -79,10 +81,11 @@ body#yamadaWrapper {
         border-radius: 32px;
         transition: background-color 0.3s ease; //ホバー時のアニメーション
 
-        @media (width < 800px) {
+        @media (width <= 800px) {
+          margin-inline-start: 0;
           margin-inline-end: 0;
 
-          @media (width < 430px) {
+          @media (width <= 430px) {
             font-size: $font_text;
             margin-block: $spacing_xl;
             padding-block: $spacing_s;
@@ -103,7 +106,7 @@ body#yamadaWrapper {
       margin-block-start: $spacing_s;
       margin-inline-end: 50px;
 
-      @media (width < 800px) {
+      @media (width <= 800px) {
         position: absolute; /* 親要素を基準に配置 */
         top: $spacing_xs;
         left: $spacing_xs;
@@ -111,7 +114,7 @@ body#yamadaWrapper {
         width: 100px;
         height: 100px;
 
-        @media (width < 430px) {
+        @media (width <= 430px) {
           width: 70px;
           height: 70px;
           top: $spacing_s;
@@ -124,7 +127,7 @@ body#yamadaWrapper {
     // ドロワーメニュー本体
 
     .drawerMenu {
-      @media (max-width: 800px) {
+      @media (width <= 800px) {
         position: fixed !important; //背景固定
         top: 0;
         left: 0;
@@ -144,17 +147,17 @@ body#yamadaWrapper {
         }
       }
 
-      // PCの見た目
-      @media (min-width: 800px) {
-        position: static; // PCでは普通に流れる
-        display: flex;
-        justify-content: space-between;
-        width: auto;
-        height: auto;
-        background: transparent;
-        opacity: 1;
-        z-index: auto;
-      }
+      // // PCの見た目
+      // @media (min-width: 800px) {
+      //   position: static; // PCでは普通に流れる
+      //   display: flex;
+      //   justify-content: space-between;
+      //   width: auto;
+      //   height: auto;
+      //   background: transparent;
+      //   opacity: 1;
+      //   z-index: auto;
+      // }
 
       .drawerMenu-nv {
         display: block;
@@ -166,14 +169,14 @@ body#yamadaWrapper {
         display: flex;
         justify-content: space-around;
 
-        @media (width < 800px) {
+        @media (width <= 800px) {
           flex-direction: column;
           text-align: center;
           gap: $spacing_2xl;
           margin-block: $spacing_2xl;
           margin-block-start: 0; //謎の余白原因。必要に応じて数値
 
-          @media (width < 430px) {
+          @media (width <= 430px) {
             font-size: $font_heading3;
             gap: $spacing_m;
             margin-block: $spacing_s;
@@ -191,7 +194,7 @@ body#yamadaWrapper {
             color: $color_text;
             padding-inline: 2rem;
 
-            @media (width < 430px) {
+            @media (width <= 430px) {
               font-size: $font_heading3;
             }
 
@@ -212,7 +215,7 @@ body#yamadaWrapper {
           margin-block: $spacing_2xl;
           padding-inline: $spacing_m;
 
-          @media (width < 800px) {
+          @media (width <= 800px) {
             margin-block: 0;
           }
 
@@ -220,7 +223,7 @@ body#yamadaWrapper {
             width: 40px; // ロゴのサイズを調整
             height: auto;
 
-            @media (width < 430px) {
+            @media (width <= 430px) {
               width: 30px;
             }
 

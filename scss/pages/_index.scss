@@ -24,10 +24,15 @@ body {
     justify-content: flex-start;
     flex-flow: column;
     align-items: center;
+
     img {
       width: 390px;
       height: 680px;
       object-fit: contain;
+
+      @media (width <= 800px) {
+        margin-block-start: 100px;
+      }
     }
   }
 

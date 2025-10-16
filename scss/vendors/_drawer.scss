@@ -13,9 +13,10 @@ header {
     top: 24px; // 上から10px
     right: 16px; // 右から10px
     z-index: 10000;
+    display: none;
 
-    @media (width >= 800px) {
-      display: none;
+    @media (width <= 800px) {
+      display: flex;
     }
 
     // 3本線作成
@@ -84,10 +85,13 @@ header {
     // background-color: $color_drawerBg;
     transition: top 0.3s ease-out;
 
-    @media (width >= 800px) {
-      position: static;
-      height: auto;
-    }
+    position: static;
+    height: auto;
+
+    // @media (width >= 800px) {
+    //   position: static;
+    //   height: auto;
+    // }
   }
 }
 
