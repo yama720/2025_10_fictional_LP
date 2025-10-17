@@ -904,7 +904,7 @@ body #Concept {
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  background-image: url(/images/texture2.png);
+  background-image: url(../../images/texture2.png);
   background-repeat: no-repeat;
   width: 340px;
   height: 540px;
