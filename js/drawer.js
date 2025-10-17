@@ -34,6 +34,8 @@ export function drawerPage() {
     // 要素の取得をDOMContentLoadedリスナー内で行う
     const dButton = document.querySelector('.drawerButton');
     const dMenu = document.querySelector('.drawerMenu'); // dMenuの取得を追加
+    console.log({ dButton });
+    console.log({ dMenu });
 
     // クラスの付け外しをする関数を、要素が取得できるスコープ内で定義する
     const toggleDrawer = () => {
