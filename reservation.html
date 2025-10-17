@@ -7,7 +7,7 @@
     <meta name="description" content="moku.のLPです" />
     <meta name="robots" content="noindex,nofollow" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" async></script>
+    <script src="js/script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,146 +75,211 @@
     <main>
       <h1 id="Reservation">Reservation</h1>
       <div class="reservation-top">
-        <img
-          src="/images/coffee2.png"
-          alt="コーヒーの画像"
-          class="hero-image"
-        />
+        <img src="/images/coffee2.png" alt="コーヒーの画像" class="top-image" />
         <img
           src="/images/coffee_takeout.png"
           alt="テイクアウトコーヒーの画像"
-          class="hero-image"
+          class="top-image"
         />
       </div>
 
-      <div class="reservation-content">
-        <section id="Dine-in" class="section-design">
-          <div class="reservation-wrapper">
-            <div class="dinein-block">
-              <h2 class="heading">Dine In</h2>
-              <form class="form">
-                <label
-                  >予約時間 (必須)
-                  <input type="datetime-local" name="datetime" required />
-                </label>
+      <section id="Dine-in" class="section-design">
+        <h2 class="heading">Dine In</h2>
+        <div class="reservation-wrapper">
+          <div class="dinein-block">
+            <form class="form">
+              <label
+                >予約時間 (必須)
+                <input
+                  type="datetime-local"
+                  name="datetime"
+                  required
+                  step="1800"
+                />
+              </label>
 
-                <label
-                  >人数 (必須)
-                  <input
-                    type="number"
-                    name="people"
-                    min="1"
-                    max="10"
-                    required
-                  />
-                </label>
+              <label
+                >人数 (必須)
+                <input
+                  type="number"
+                  name="people"
+                  min="1"
+                  max="10"
+                  required
+                  placeholder="人数入力"
+                />
+              </label>
 
-                <label
-                  >席指定
-                  <select name="seat">
-                    <option value="" hidden>席選択  ▼</option>
-                    <option value="カウンター">カウンター</option>
-                    <option value="テーブル">テーブル</option>
-                    <option value="ソファ">ソファ</option>
-                  </select>
-                </label>
+              <label
+                >席指定
+                <select name="seat">
+                  <option value="" hidden>席選択  ▼</option>
+                  <option value="カウンター">カウンター</option>
+                  <option value="テーブル">テーブル</option>
+                  <option value="ソファ">ソファ</option>
+                </select>
+              </label>
 
-                <button type="submit" class="btn">予約する</button>
-              </form>
-            </div>
+              <div class="Reserve-btn">
+                <div class="buy-wrapper">
+                  <button type="submit" class="btn">予約する</button>
+                </div>
+              </div>
+            </form>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="Take-out" class="section-design">
-          <div class="reservation-wrapper">
-            <div class="takeout-block">
-              <h2 class="heading">Take Out</h2>
-              <form class="form">
-                <label
-                  >メニュー (必須)
-                  <input
-                    type="text"
-                    name="menu"
-                    placeholder="カフェラテ"
-                    required
-                  />
-                </label>
+      <section id="Take-out" class="section-design">
+        <h2 class="heading">Take Out</h2>
+        <div class="reservation-wrapper">
+          <div class="takeout-block">
+            <form class="form">
+              <label>
+                メニュー (必須)
+                <div id="menu-input-container">
+                  <div class="menu-serect">
+                    <select name="menu[]" required>
+                      <option value="">メニューを選択 ▼</option>
+                      <option value="コーヒー">スペシャルティコーヒー</option>
+                      <option value="アイスティー">アイスティー</option>
+                      <option value="ケーキ">季節の手作りケーキ</option>
+                    </select>
+                    <input type="number" name="quantity[]" value="1" min="1" />
+                  </div>
+                </div>
 
-                <label
-                  >受け取り日時 (必須)
-                  <input type="datetime-local" name="pickup" required />
-                </label>
+                <button type="button" id="add-menu-btn">
+                  ＋ メニューを追加
+                </button>
+              </label>
 
-                <button type="submit" class="btn">予約する</button>
-              </form>
-            </div>
+              <label>
+                受け取り日時 (必須)
+                <input type="datetime-local" name="pickup" required />
+              </label>
+
+              <div class="Reserve-btn">
+                <div class="buy-wrapper">
+                  <button type="submit" class="btn">予約する</button>
+                </div>
+              </div>
+            </form>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="Access" class="section-design">
-          <h2 class="heading">Access</h2>
-          <div class="access-wrapper">
-            <h3 class="item">営業時間</h3>
-            <ul>
-              <li>9:00-19:00(平日)</li>
-              <li>9:00-20:00(土日祝)</li>
-            </ul>
-            <div id="instagram-post">
-              <blockquote
-                class="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink="https://www.instagram.com/p/DECbH67p5P-/?utm_source=ig_embed&utm_campaign=loading"
-                data-instgrm-version="14"
-              ></blockquote>
+      <section id="Access" class="section-design">
+        <h2 class="heading">Access</h2>
+        <div class="access-wrapper">
+          <h3 class="item">営業時間</h3>
+          <ul>
+            <li>9:00-19:00(平日)</li>
+            <li>9:00-20:00(土日祝)</li>
+          </ul>
+          <div id="instagram-post">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/p/DECbH67p5P-/?utm_source=ig_embed&utm_campaign=loading"
+              data-instgrm-version="14"
+            ></blockquote>
 
-              <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-
-            <h3 class="item">定休日</h3>
-            <ul>
-              <li>毎週火曜日</li>
-            </ul>
-
-            <h3 class="item">テイクアウト</h3>
-            <ul>
-              <li>L.O.閉店30分前</li>
-            </ul>
-
-            <h3 class="item">電話番号</h3>
-            <ul>
-              <li>×××-×××-××××</li>
-            </ul>
-
-            <h3 class="item">住所</h3>
-            <ul>
-              <li>×××-××××</li>
-              <li>
-                ○○県○○市○○区○○○○<br />
-                ○○○-○○-○○
-              </li>
-            </ul>
+            <script async src="//www.instagram.com/embed.js"></script>
           </div>
 
-          <div id="google-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1127.657787804483!2d135.04717383565662!3d35.165652389932376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600006464cfed7a9%3A0x7c43a8888ad3a1bc!2zSkHkuLnms6LjgbLjgYvjgb8g44Go44KM44Gf44Gm6YeO6I-c55u05aOy5omA!5e0!3m2!1sja!2sjp!4v1759989349685!5m2!1sja!2sjp"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </section>
+          <h3 class="item">定休日</h3>
+          <ul>
+            <li>毎週火曜日</li>
+          </ul>
 
-        <section id="Attention" class="section-design">
-          <h2 class="heading">Attention</h2>
-        </section>
-      </div>
+          <h3 class="item">テイクアウト</h3>
+          <ul>
+            <li>L.O.閉店30分前</li>
+          </ul>
+
+          <h3 class="item">電話番号</h3>
+          <ul>
+            <li>×××-×××-××××</li>
+          </ul>
+
+          <h3 class="item">住所</h3>
+          <ul>
+            <li>×××-××××</li>
+            <li>
+              ○○県○○市○○区○○○○<br />
+              ○○○-○○-○○
+            </li>
+          </ul>
+        </div>
+
+        <div id="google-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1127.657787804483!2d135.04717383565662!3d35.165652389932376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600006464cfed7a9%3A0x7c43a8888ad3a1bc!2zSkHkuLnms6LjgbLjgYvjgb8g44Go44KM44Gf44Gm6YeO6I-c55u05aOy5omA!5e0!3m2!1sja!2sjp!4v1759989349685!5m2!1sja!2sjp"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="Attention" class="section-design">
+        <h2 class="heading">Attention</h2>
+        <div class="attention-item">
+          <h3><strong>🌿ご予約について</strong></h3>
+          <ul>
+            <li>ご予約は当日含め、3日前から承っております。</li>
+            <li>
+              ご来店時間より15分以上遅れる場合は、<br />
+              自動的にキャンセル扱いとなる可能性が<br />
+              ございます。
+            </li>
+            <li>
+              混雑状況により、お席のご希望（カウン
+              ター／ソファ等）に添えないことがあります。
+            </li>
+            <p>
+              できる限り多くのお客様に心地よい時間をお過ごしいただけるよう、ご理解をお願いいたします。
+            </p>
+          </ul>
+        </div>
+
+        <div class="attention-item">
+          <h3><strong>🌿キャンセル・変更について </strong></h3>
+          <ul>
+            <li>キャンセル・ご変更は前日までにご連絡をお願いいたします。</li>
+            <li>
+              無断キャンセルが続く場合は、今後の<br />
+              ご予約をお断りする場合がございます。
+            </li>
+            <p>
+              急なご予定の変更などございましたら、<br />
+              お気軽にご相談ください。
+            </p>
+          </ul>
+        </div>
+
+        <div class="attention-item">
+          <h3><strong>🌿店内設備・ご利用について </strong></h3>
+          <ul>
+            <li>店内は全席禁煙となっております。</li>
+            <li>Wi-Fi・電源をご利用いただけます。</li>
+            <li>
+              小さなお子様連れやペット同伴での<br />
+              ご来店は、事前にお問い合わせください。
+            </li>
+            <p>
+              すべてのお客様が安心してお過ごしいただけるよう、やさしいご協力をお願いいたします。
+            </p>
+          </ul>
+        </div>
+      </section>
 
       <div class="Reserve-btn-overall buy-wrapper">
-        <a href="#" class="btn">今すぐ予約</a>
+        <a href="#" class="btn">ご不明点はこちら</a>
       </div>
 
       <a href="#" id="to-top-btn" title="ページ上部に戻る">▲</a>

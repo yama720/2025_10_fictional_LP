@@ -52,8 +52,6 @@ body {
     flex-flow: column;
     align-items: center;
 
-    // width: 358px;
-    // height: 1027px;
     background-color: $color_sectionBg;
     border-radius: 20px;
     // margin: 1rem;
@@ -140,7 +138,8 @@ body {
     flex-flow: column;
     align-items: center;
 
-    .btn {
+    a.btn,
+    button.btn {
       display: block;
       width: 236px;
       height: 61px;
@@ -152,24 +151,14 @@ body {
       font-weight: $font_bold;
       line-height: 24px;
       background-image: url(/images/texture1.png);
+      background-blend-mode: multiply; // ←追加
       color: $color_text;
       border-radius: 50px;
       transition: background-color 0.3s ease; //ホバー時のアニメーション
-
-      // @media (width < 800px) {
-      //   margin-inline-end: 0;
-
-      //   @media (width < 430px) {
-      //     font-size: $font_text;
-      //     margin-block: $spacing_xl;
-      //     padding-block: $spacing_s;
-      //     padding-inline: 45px;
-      //   }
-      // }
     }
   }
-  .btn:hover {
-    background-color: $color_hoverBg; //ホバー背景色
+  .Reserve-btn .btn:hover {
+    background-color: $color_hoverBg;
   }
 
   // ------------------------------------------------
