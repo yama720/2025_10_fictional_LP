@@ -34,6 +34,10 @@ body {
     flex-flow: column;
     align-items: center;
 
+    @media (width >= 800px) {
+      padding-block-start: 200px;
+    }
+
     img {
       width: 390px;
       height: 680px;

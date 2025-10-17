@@ -15,6 +15,10 @@ body#yamadaWrapper {
     width: 100%;
     min-width: 800px;
 
+    position: fixed;
+    top: 0;
+    z-index: 1000000000;
+
     @media (width <= 800px) {
       width: 100%;
       min-width: auto;

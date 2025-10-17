@@ -44,6 +44,10 @@ body {
       -2.5px 2.5px 0 #fcf5e3, 2.5px -2.5px 0 #fcf5e3, -2.5px -2.5px 0 #fcf5e3,
       1.5px 1.5px 0 #fcf5e3, -1.5px 1.5px 0 #fcf5e3, 1.5px -1.5px 0 #fcf5e3,
       -1.5px -1.5px 0 #fcf5e3;
+
+    @media (width >= 800px) {
+      padding-block-start: 280px;
+    }
   }
 
   // ---------------------------------------------
