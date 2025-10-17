@@ -9,7 +9,9 @@ body#yamadaWrapper {
   font-style: normal;
 
   .cover-home {
-    background-color: $color_drawerBg;
+    background-image: url(/images/texture2.png);
+    background-repeat: repeat;
+
     width: 100%;
     min-width: 800px;
 

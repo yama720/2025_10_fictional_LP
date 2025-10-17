@@ -36,6 +36,9 @@ export function reservationPage() {
       const removeBtn = document.createElement('button');
       removeBtn.type = 'button';
       removeBtn.textContent = '削除';
+
+      removeBtn.classList.add('remove-btn');
+
       removeBtn.addEventListener('click', () => newMenuItem.remove());
 
       // 要素をまとめて追加

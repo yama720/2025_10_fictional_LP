@@ -75,7 +75,8 @@ body {
   #Dine-in,
   #Take-out {
     width: 358px;
-    height: 599px;
+    // height: 599px;
+    min-height: 599px;
   }
 
   //   ------------------------------------------
@@ -106,6 +107,7 @@ body {
         border-radius: 8px;
         background-color: #fff;
         font-size: $font_text;
+        color: $color_text;
       }
 
       label select {
@@ -119,6 +121,7 @@ body {
   // ボタン
   button.btn {
     margin-block-start: 30px;
+    margin-block-end: 50px;
   }
 
   // -------------------------------------------
@@ -131,11 +134,16 @@ body {
   }
 
   // ------------------------------
-  // .section-design {
-  //   .takeout-block {
-  //     height: auto;
-  //   }
-  // }
+  // メニュー追加のボタン
+  #add-menu-btn {
+    color: $color_text;
+  }
+
+  // -----------------------------------------
+  // 削除ボタン
+  .remove-btn {
+    color: $color_text;
+  }
 
   //   ------------------------------------------
   // Dine-inの装飾

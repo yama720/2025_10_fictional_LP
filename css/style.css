@@ -343,7 +343,8 @@ body#yamadaWrapper {
   font-style: normal;
 }
 body#yamadaWrapper .cover-home {
-  background-color: #f8e6e4;
+  background-image: url(/images/texture2.png);
+  background-repeat: repeat;
   width: 100%;
   min-width: 800px;
 }
@@ -673,7 +674,7 @@ body #Reservation {
 body #Dine-in,
 body #Take-out {
   width: 358px;
-  height: 599px;
+  min-height: 599px;
 }
 body .dinein-block,
 body .takeout-block {
@@ -703,6 +704,7 @@ body .takeout-block .form select {
   border-radius: 8px;
   background-color: #fff;
   font-size: 16px;
+  color: #593622;
 }
 body .dinein-block .form label select,
 body .takeout-block .form label select {
@@ -712,6 +714,7 @@ body .takeout-block .form label select {
 }
 body button.btn {
   margin-block-start: 30px;
+  margin-block-end: 50px;
 }
 body .menu-serect {
   display: flex;
@@ -719,6 +722,12 @@ body .menu-serect {
   flex-direction: column;
   gap: 10px;
   margin-top: 8px;
+}
+body #add-menu-btn {
+  color: #593622;
+}
+body .remove-btn {
+  color: #593622;
 }
 body #Dine-in::before {
   content: "";

@@ -139,6 +139,16 @@
           <div class="takeout-block">
             <form class="form">
               <label>
+                受け取り日時 (必須)
+                <input
+                  type="datetime-local"
+                  name="pickup"
+                  required
+                  step="1800"
+                />
+              </label>
+
+              <label>
                 メニュー (必須)
                 <div id="menu-input-container">
                   <div class="menu-serect">
@@ -155,16 +165,6 @@
                 <button type="button" id="add-menu-btn">
                   ＋ メニューを追加
                 </button>
-              </label>
-
-              <label>
-                受け取り日時 (必須)
-                <input
-                  type="datetime-local"
-                  name="pickup"
-                  required
-                  step="1800"
-                />
               </label>
 
               <div class="Reserve-btn">
