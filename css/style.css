@@ -623,7 +623,7 @@ footer .sns-nav img {
 
 @font-face {
   font-family: "JejuHallasan";
-  src: url("../../fonts/JejuHallasan.ttf.woff") format("woff");
+  src: url("../fonts/JejuHallasan.ttf.woff") format("woff");
 }
 html {
   scroll-behavior: smooth;
