@@ -731,7 +731,7 @@ body .remove-btn {
 }
 body #Dine-in::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -744,7 +744,7 @@ body #Dine-in::before {
 }
 body #Dine-in::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -757,7 +757,7 @@ body #Dine-in::after {
 }
 body #Take-out::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -770,7 +770,7 @@ body #Take-out::before {
 }
 body #Take-out::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -821,7 +821,7 @@ body #Attention .attention-item p {
 }
 body #Attention::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -834,7 +834,7 @@ body #Attention::before {
 }
 body #Attention::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -848,7 +848,7 @@ body #Attention::after {
 
 @font-face {
   font-family: "JejuHallasan";
-  src: url("../../fonts/JejuHallasan.ttf.woff") format("woff");
+  src: url("../fonts/JejuHallasan.ttf.woff") format("woff");
 }
 html {
   scroll-behavior: smooth;
@@ -923,7 +923,7 @@ body #Concept p {
 }
 body #Concept::before {
   content: "";
-  background-image: url(/images/decoration2.png);
+  background-image: url(../images/decoration2.png);
   background-size: contain;
   display: block;
   width: 340px;
@@ -933,7 +933,7 @@ body #Concept::before {
 }
 body #Concept::after {
   content: "";
-  background-image: url(/images/decoration2.png);
+  background-image: url(../images/decoration2.png);
   background-size: contain;
   display: block;
   width: 340px;
@@ -968,7 +968,7 @@ body .Reserve-btn button.btn {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  background-image: url(/images/texture1.png);
+  background-image: url(../images/texture1.png);
   background-blend-mode: multiply;
   color: #593622;
   border-radius: 50px;
@@ -1004,7 +1004,7 @@ body #Special img {
 }
 body #Special::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1017,7 +1017,7 @@ body #Special::before {
 }
 body #Special::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1108,7 +1108,7 @@ body #Menu .menu-header {
 }
 body #Menu::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1121,7 +1121,7 @@ body #Menu::before {
 }
 body #Menu::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1238,7 +1238,7 @@ body #Space .slider .arrow-right {
 }
 body #Space::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1251,7 +1251,7 @@ body #Space::before {
 }
 body #Space::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1336,7 +1336,7 @@ body iframe {
 }
 body #Access::before {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -1349,7 +1349,7 @@ body #Access::before {
 }
 body #Access::after {
   content: "";
-  background-image: url(/images/decoration1.png);
+  background-image: url(../images/decoration1.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;

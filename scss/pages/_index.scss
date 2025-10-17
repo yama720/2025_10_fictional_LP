@@ -6,7 +6,7 @@
 // 独自のフォント指定
 @font-face {
   font-family: 'JejuHallasan';
-  src: url('../../fonts/JejuHallasan.ttf.woff') format('woff');
+  src: url('../fonts/JejuHallasan.ttf.woff') format('woff');
 }
 // ----------------------------------
 
@@ -97,7 +97,7 @@ body {
   // 蔦上部
   #Concept::before {
     content: ''; //空箱用意
-    background-image: url(/images/decoration2.png);
+    background-image: url(../images/decoration2.png);
     background-size: contain; //箱に収める
     display: block;
     width: 340px;
@@ -109,7 +109,7 @@ body {
   // 蔦下部
   #Concept::after {
     content: ''; //空箱用意
-    background-image: url(/images/decoration2.png);
+    background-image: url(../images/decoration2.png);
     background-size: contain; //箱に収める
     display: block;
     width: 340px;
@@ -149,7 +149,7 @@ body {
       font-size: $font_text;
       font-weight: $font_bold;
       line-height: 24px;
-      background-image: url(/images/texture1.png);
+      background-image: url(../images/texture1.png);
       background-blend-mode: multiply; // ←追加
       color: $color_text;
       border-radius: 50px;
@@ -194,7 +194,7 @@ body {
   // 装飾の草　上部
   #Special::before {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -213,7 +213,7 @@ body {
   // 装飾の草　下部
   #Special::after {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -337,7 +337,7 @@ body {
   // 装飾の草　上部
   #Menu::before {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -356,7 +356,7 @@ body {
   // 装飾の草　下部
   #Menu::after {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -501,7 +501,7 @@ body {
   // 装飾の草　上部
   #Space::before {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -520,7 +520,7 @@ body {
   // 装飾の草　下部
   #Space::after {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -639,7 +639,7 @@ body {
   // 装飾の草　上部
   #Access::before {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
@@ -658,7 +658,7 @@ body {
   // 装飾の草　下部
   #Access::after {
     content: ''; //空箱用意
-    background-image: url(/images/decoration1.png);
+    background-image: url(../images/decoration1.png);
     background-size: contain; //箱に収める
     background-repeat: no-repeat; //繰り返しを防ぐ
     display: block;
