@@ -1,31 +1,59 @@
 // ドロワーメニューの部分
 
+// export function drawerPage() {
+//   // function(関数を作る) 関数の名前・自由に付けれる (引数(関数に引き渡す値)) {処理内容(何がしたいのか)}
+//   function drawerButton() {
+//     //HTMLから必要な要素をJavaScriptに連れてくる
+//     const dButton = document.querySelector('.drawerButton');
+//     const dMenu = document.querySelector('.drawerMenu');
+
+//     //連れてきた要素にクラスの付け外しをする
+//     dButton.classList.toggle('active');
+//     dMenu.classList.toggle('active');
+//   }
+
+//   /// HTMLが読み込まれたあとにイベント登録する
+//   document.addEventListener('DOMContentLoaded', () => {
+//     const dButton = document.querySelector('.drawerButton');
+
+//     //ここでonclickをJSから設定
+//     dButton.addEventListener('click', drawerButton);
+
+//     // メニューリンクをクリックしたら閉じる処理
+//     document.querySelectorAll('.drawerMenu a').forEach((link) => {
+//       link.addEventListener('click', () => {
+//         dButton.classList.remove('active');
+//         document.querySelector('.drawerMenu').classList.remove('active');
+//       });
+//     });
+//   });
+// }
+
 export function drawerPage() {
-  // function(関数を作る) 関数の名前・自由に付けれる (引数(関数に引き渡す値)) {処理内容(何がしたいのか)}
-  function drawerButton() {
-    //HTMLから必要な要素をJavaScriptに連れてくる
-    const dButton = document.querySelector('.drawerButton');
-    const dMenu = document.querySelector('.drawerMenu');
-
-    //連れてきた要素にクラスの付け外しをする
-    dButton.classList.toggle('active');
-    dMenu.classList.toggle('active');
-  }
-
-  /// HTMLが読み込まれたあとにイベント登録する
   document.addEventListener('DOMContentLoaded', () => {
+    // 要素の取得をDOMContentLoadedリスナー内で行う
     const dButton = document.querySelector('.drawerButton');
+    const dMenu = document.querySelector('.drawerMenu'); // dMenuの取得を追加
 
-    // ← ここでonclickをJSから設定
-    dButton.addEventListener('click', drawerButton);
+    // クラスの付け外しをする関数を、要素が取得できるスコープ内で定義する
+    const toggleDrawer = () => {
+      // 連れてきた要素にクラスの付け外しをする
+      dButton.classList.toggle('active');
+      dMenu.classList.toggle('active');
+    };
 
-    // メニューリンクをクリックしたら閉じる処理
-    document.querySelectorAll('.drawerMenu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        dButton.classList.remove('active');
-        document.querySelector('.drawerMenu').classList.remove('active');
+    if (dButton && dMenu) {
+      // クリックイベントを設定
+      dButton.addEventListener('click', toggleDrawer);
+
+      // メニューリンクをクリックしたら閉じる処理
+      document.querySelectorAll('.drawerMenu a').forEach((link) => {
+        link.addEventListener('click', () => {
+          dButton.classList.remove('active');
+          dMenu.classList.remove('active');
+        });
       });
-    });
+    }
   });
 }
 
@@ -35,6 +63,9 @@ export function drawerPage() {
 export function topbutton() {
   document.addEventListener('DOMContentLoaded', () => {
     const toTopBtn = document.getElementById('to-top-btn');
+
+    if (!toTopBtn) return;
+
     // 出現させるスクロール量 (ピクセル)
     const scrollThreshold = 100;
 
