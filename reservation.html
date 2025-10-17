@@ -7,7 +7,8 @@
     <meta name="description" content="moku.のLPです" />
     <meta name="robots" content="noindex,nofollow" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <!-- <script src="js/script.js" defer></script> -->
+    <script type="module" src="js/reservation.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,14 +33,16 @@
           <div class="drawerMenu" id="drawerMenu">
             <nav class="drawerMenu-nv">
               <div class="sp-show">
-                <img src="images/icon.png" alt="moku.のロゴ" />
+                <a href="/index.html">
+                  <img src="images/icon.png" alt="moku.のロゴ"
+                /></a>
               </div>
               <ul class="main-nav">
-                <li><a href="#Concept">Concept</a></li>
-                <li><a href="#Special">Special</a></li>
-                <li><a href="#Menu">Menu</a></li>
-                <li><a href="#Space">Space</a></li>
-                <li><a href="#Access">Access</a></li>
+                <li><a href="/index.html#Concept">Concept</a></li>
+                <li><a href="/index.html#Special">Special</a></li>
+                <li><a href="/index.html#Menu">Menu</a></li>
+                <li><a href="/index.html#Space">Space</a></li>
+                <li><a href="/index.html#Access">Access</a></li>
               </ul>
             </nav>
 
@@ -156,7 +159,12 @@
 
               <label>
                 受け取り日時 (必須)
-                <input type="datetime-local" name="pickup" required />
+                <input
+                  type="datetime-local"
+                  name="pickup"
+                  required
+                  step="1800"
+                />
               </label>
 
               <div class="Reserve-btn">
@@ -278,8 +286,10 @@
         </div>
       </section>
 
-      <div class="Reserve-btn-overall buy-wrapper">
-        <a href="#" class="btn">ご不明点はこちら</a>
+      <div class="Reserve-btn">
+        <div class="buy-wrapper">
+          <a href="#" class="btn">ご不明点はこちら</a>
+        </div>
       </div>
 
       <a href="#" id="to-top-btn" title="ページ上部に戻る">▲</a>
