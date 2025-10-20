@@ -235,6 +235,10 @@ body {
     width: 358px;
     height: 1133px;
 
+    .heading {
+      padding-inline-start: 50px;
+    }
+
     .attention-item {
       display: flex;
       flex-direction: column;

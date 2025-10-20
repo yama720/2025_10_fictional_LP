@@ -793,6 +793,9 @@ body #Attention {
   width: 358px;
   height: 1133px;
 }
+body #Attention .heading {
+  padding-inline-start: 50px;
+}
 body #Attention .attention-item {
   display: flex;
   flex-direction: column;
