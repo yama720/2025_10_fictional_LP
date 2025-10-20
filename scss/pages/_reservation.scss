@@ -101,6 +101,7 @@ body {
         font-family: $font_jp2;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 0.5rem; //ラベルテキストと入力欄の間の余白
       }
 
@@ -234,6 +235,10 @@ body {
   #Attention {
     width: 358px;
     height: 1133px;
+
+    .heading {
+      padding-inline-start: 50px;
+    }
 
     .attention-item {
       display: flex;

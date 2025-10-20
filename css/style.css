@@ -701,6 +701,7 @@ body .takeout-block .form label {
   font-family: "Stick", sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
 }
 body .dinein-block .form input,
@@ -792,6 +793,9 @@ body #Take-out::after {
 body #Attention {
   width: 358px;
   height: 1133px;
+}
+body #Attention .heading {
+  padding-inline-start: 50px;
 }
 body #Attention .attention-item {
   display: flex;
