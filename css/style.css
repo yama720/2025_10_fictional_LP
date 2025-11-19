@@ -642,6 +642,13 @@ img {
   height: auto;
 }
 
+input,
+select {
+  display: block;
+  width: 100%;
+  min-width: 254px;
+}
+
 body {
   background-color: #e9ead3;
 }
