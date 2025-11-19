@@ -730,6 +730,7 @@ body button.btn {
   margin-block-end: 50px;
 }
 body .menu-serect {
+  max-width: 254px;
   display: flex;
   align-items: center;
   flex-direction: column;
