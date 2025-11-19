@@ -679,6 +679,9 @@ body .reservation-top img {
 body #Reservation {
   text-align: center;
 }
+body .reservation-wrapper {
+  max-width: 254px;
+}
 body #Dine-in,
 body #Take-out {
   width: 358px;
@@ -691,6 +694,7 @@ body .takeout-block {
 }
 body .dinein-block .form,
 body .takeout-block .form {
+  max-width: 254px;
   display: flex;
   flex-direction: column;
   gap: 2rem;

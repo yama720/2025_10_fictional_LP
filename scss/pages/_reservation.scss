@@ -75,6 +75,10 @@ body {
     text-align: center;
   }
 
+  .reservation-wrapper {
+    max-width: 254px;
+  }
+
   //   --------------------------------
   #Dine-in,
   #Take-out {
@@ -92,6 +96,7 @@ body {
     text-align: left;
 
     .form {
+      max-width: 254px;
       display: flex;
       flex-direction: column;
       gap: 2rem; //フォーム項目間の余白
