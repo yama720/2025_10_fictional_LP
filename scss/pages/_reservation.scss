@@ -99,6 +99,7 @@ body {
       max-width: 254px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 2rem; //フォーム項目間の余白
 
       label {
